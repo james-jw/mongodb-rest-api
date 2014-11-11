@@ -91,7 +91,7 @@
       <tr>
         <td>!*=</td>
         <td>Equates that the property does not contain the supplied text.</td>
-        <td><pre><code>name*=son</code></pre></td>
+        <td><pre><code>name!*=son</code></pre></td>
       </tr>
       <tr>
         <td>~=</td>
@@ -105,8 +105,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <td>!~=</td>
         <td>Equates that the property does not match any of the supplied regular expressions.</td>
         <td>
-           <pre><code>name~=jef.*son
-eventName~=Designer.*Count|Session.*Count</code></pre>
+           <pre><code>name!~=jef.*son</code></pre>
         </td>
       </tr>
       <tr>

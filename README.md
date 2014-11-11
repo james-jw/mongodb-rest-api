@@ -199,10 +199,9 @@
     For example: <code>$group-by=startTimeUtc interval 1w</code> would create a group for each week of events from now.
 
     </p><h3>Grouping pipelines (Proposed)</h3>
-    Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<br>
+    Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
-    <code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code><br> <code>Note: pipeline-index defaults to <code>0</code></code><p>
-    
+    <code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code><br> Note: pipeline-index defaults to <code>0</code><p />
     
     For example: <code>$group-by(1)=sum-Duration</code><br>
     Or with function parameters: <code>$having(sum-duration, 1)&gt;=100</code></p><p>

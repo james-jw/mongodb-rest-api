@@ -111,7 +111,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
       <tr>
         <td>!=</td>
-        <td>Equates that the property does not equal one of the provided values. You can either provide the param multiple times or seperate values with the | character.</td>
+        <td>Equates that the property does not equal one of the provided values. You can either provide the param multiple times or seperate values with the <code>|</code> character.</td>
         <td><pre><code>lastName!=Smith|Doe</code></pre></td>
       </tr>
       <tr>

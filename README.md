@@ -80,7 +80,7 @@
       </tr>
       <tr>
         <td>=</td>
-        <td>Equates that the property is equals to one of the provided values. You can either provide the param multiple times or seperate values with the <code>|</code> character.</td>
+        <td>Equates that the property is equals to one of the provided values.</td>
         <td><pre><code>firstName=John&amp;firstName=Jane</code></pre></td>
       </tr>
       <tr>
@@ -110,7 +110,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
       <tr>
         <td>!=</td>
-        <td>Equates that the property does not equal one of the provided values. You can either provide the param multiple times or seperate values with the <code>|</code> character.</td>
+        <td>Equates that the property does not equal one of the provided values.</td>
         <td><pre><code>lastName!=Smith|Doe</code></pre></td>
       </tr>
       <tr>
@@ -125,7 +125,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
     
-    All operators with the exception of the <code>$lt; and ></code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the | character.
+    All operators with the exception of the <code>&lt;= and >=</code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the <code>|</code> character.
     
     <h3>Boolean Operators</h3>
     

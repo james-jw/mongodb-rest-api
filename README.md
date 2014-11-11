@@ -214,13 +214,14 @@
         
     </p><h2>Examples</h2>
 
-    Find all events with a domain name equal to MINER or NAM and a startTimeUtc within the last week <br>
-    <code>/rest/v1/events?domain=MINER|NAM&amp;startTimeUtc&gt;=-1w</code><p>
+    Find all events with a domain name equal to MINER or NAM and a startTimeUtc within the last week 
+    <pre><code>/rest/v1/events?domain=MINER|NAM&amp;startTimeUtc&gt;=-1w</code></pre>
 
-    Group by domain, showing all groups having more than 2000 events <br>
-    <code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></p><p>
+    Group by domain, showing all groups having more than 2000 events
+    <pre><code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></pre>
 
-    Group by domain and eventName showing all groups having an average paramters.Duration less than 10<br>
-    <code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></p><p>
+    Group by domain and eventName showing all groups having an average paramters.Duration less than 10
+    <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
+    
   </p>
 </div>

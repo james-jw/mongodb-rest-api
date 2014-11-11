@@ -159,7 +159,7 @@
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
 
     When an aggergate function is used the resulting group field will be named using this logic:<br>
-    <code>{final-field-name}-{function-name}</code>. For example: <code>$avg=parameters.Duration</code> would become <code>duration-avg</code> on the resulting groups.
+    <code>{final-field-name}-{function-name}</code>. For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     Below is a list of functions which can be performed on the groups:
 

@@ -62,6 +62,10 @@
         <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>
       </tr>
     </tbody></table>
+    
+    As with the {Calculate} parameter. Expressions can be used on the right side of the operator. For example to group by orders by their final, after tax price you could write:
+    
+    <pre><code>$group-by={price * (tax + 1)}</code></pre>
 
     <h3>Query Operators</h3>
     Mongodb collections can be queried via the /rest/v1/{collection-name} endpoint using standard query parameters.
@@ -163,7 +167,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
 
     When an aggergate function is used the resulting group field will be named using this logic:
-    <pre><code>{final-field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
+    <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     Below is a list of functions which can be performed on the groups:
 

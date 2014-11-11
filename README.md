@@ -114,6 +114,9 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </tbody></table>
     
     <h3>Boolean Operators</h3>
+    
+    Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. 
+    
     <table>
         <tr>
             <th>Name</th>
@@ -128,7 +131,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
             <td>$or</td>
             <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
-            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&not(name)=antony&$or(1, 2)</code></pre></td>
+            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&or(name, 2)=antony&$or(1, 2)</code></pre></td>
         </tr>
         <tr>
             <td>$not</td>

@@ -48,14 +48,14 @@
         <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
-        <td>$group-by</td>
+        <td>$group-by({pipeline-index} ? 0)</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
         <td>Grouping</td>
         <td></td>
         <td><pre><code>$group-by=parameters.WorkspaceType</code></pre></td>
       </tr>
       <tr>
-        <td>$having({path})</td>
+        <td>$having({path}, {pipeline-index} ? 0)</td>
         <td>Performs predication on a group result set.</td>
         <td>Grouping</td>
         <td></td>
@@ -175,22 +175,23 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <th>Example</th>
       </tr>
       <tr>
-        <td>$avg</td>
+        <td>$avg({pipeline-index} ? 0)</td>
         <td>Averages the values of the path provided for each group</td>
         <td><pre><code>$avg=parameters.Duration</code></pre></td>
       </tr>
       <tr>
-        <td>$min</td>
+        <td>$min({pipeline-index} ? 0)</td>
         <td>Selects the min value of the path provided for each group</td>
         <td><pre><code>$min=income</code></pre></td>
       </tr>
       <tr>
-        <td>$max</td>
+        <td>$max({pipeline-index} ? 0)</td>
         <td>Selects the max value of the path provided for each group</td>
-        <td><pre><code>$max=age</code></pre></td>
+        <td><pre><code>$max=age
+$max(2)<=age-sum</code></pre></td>
       </tr>
       <tr>
-        <td>$sum</td>
+        <td>$sum({pipeline-index} ? 0)</td>
         <td>Sums the values of the path provided for each group</td>
         <td><pre><code>$sum=parameters.count</code></pre></td>
       </tr>

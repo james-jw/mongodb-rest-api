@@ -25,11 +25,11 @@
         <td><pre><code>name.firstName=John&amp;age>=20</code></pre></td>
       </tr>
       <tr>
-        <td>{Calculation}</td>
+        <td>{Calculation} (Proposed)</td>
         <td>Queries against the path provided using a dynamic javascript expression as the input. The expression must be encapsulated within the <code>{ }</code> brackets.</td>
         <td></td>
         <td><pre><code>{firstName + lastName}=JohnDoe
-{(quantity * price) * tax}<=200</code></pre></td>
+{price * tax}&lt;=200</code></pre></td>
       </tr>
       <tr>
         <td>$skip</td>

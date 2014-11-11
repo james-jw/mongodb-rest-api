@@ -15,49 +15,42 @@
       <tbody><tr>
         <th>Parameter</th>
         <th>Description</th>
-        <th>Usage</th>
         <th>Default</th>
         <th>Example</th>
       </tr>
       <tr>
         <td>{Path Expression}</td>
         <td>Queries against the path provided. Available paths depends on the document structure.</td>
-        <td>Querying and grouping</td>
         <td></td>
         <td><pre><code>name.firstName=John&amp;age>=20</code></pre></td>
       </tr>
       <tr>
         <td>$skip</td>
         <td>Skips to the result index provided.</td>
-        <td>Querying and grouping</td>
         <td><code>0</code></td>
         <td><pre><code>$skip=100</code></pre></td>
       </tr><tr>
       </tr><tr>
         <td>$limit</td>
         <td>Limits the number of returned results.</td>
-        <td>Querying and grouping</td>
         <td><code>25</code></td>
         <td><pre><code>$limit=30</code></pre></td>
       </tr>
       <tr>
         <td>$sort</td>
         <td>Sorts the results by the path and direction provided</td>
-        <td>Querying and grouping</td>
         <td><code>{path} desc</code></td>
         <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
         <td>$group-by({pipeline-index} ? 0)</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
-        <td>Grouping</td>
         <td></td>
         <td><pre><code>$group-by=parameters.WorkspaceType</code></pre></td>
       </tr>
       <tr>
         <td>$having({path}, {pipeline-index} ? 0)</td>
         <td>Performs predication on a group result set.</td>
-        <td>Grouping</td>
         <td></td>
         <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>
       </tr>

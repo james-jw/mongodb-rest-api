@@ -80,7 +80,7 @@
       </tr>
       <tr>
         <td>=</td>
-        <td>Equates that the property is equals to one of the provided values. You can either provide the param multiple times or seperate values with the | character.</td>
+        <td>Equates that the property is equals to one of the provided values. You can either provide the param multiple times or seperate values with the <code>|</code> character.</td>
         <td><pre><code>firstName=John&amp;firstName=Jane</code></pre></td>
       </tr>
       <tr>

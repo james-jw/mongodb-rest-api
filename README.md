@@ -89,8 +89,21 @@
         <td><pre><code>name*=son</code></pre></td>
       </tr>
       <tr>
+        <td>!*=</td>
+        <td>Equates that the property does not contain the supplied text.</td>
+        <td><pre><code>name*=son</code></pre></td>
+      </tr>
+      <tr>
         <td>~=</td>
         <td>Equates that the property matches one or more of the supplied regular expressions.</td>
+        <td>
+           <pre><code>name~=jef.*son
+eventName~=Designer.*Count|Session.*Count</code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>!~=</td>
+        <td>Equates that the property does not match any of the supplied regular expressions.</td>
         <td>
            <pre><code>name~=jef.*son
 eventName~=Designer.*Count|Session.*Count</code></pre>

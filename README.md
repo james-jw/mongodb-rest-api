@@ -109,7 +109,8 @@
 
     <h3>Querying Dates</h3>
 
-    Dates can be queried using standard UTC time formats for example <code>startTimeUtc&lt;=2014-10-11</code>. Alternatively deltas can be used as well. <p>
+    Dates can be queried using standard UTC time formats.<br />
+    For example <code>startTimeUtc&lt;=2014-10-11</code>. Alternatively deltas can be used as well. <p>
 
     Deltas take the form of <code>[+-]{quantity}[smhdwMQy]</code> </p><p>
 

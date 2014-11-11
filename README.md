@@ -235,28 +235,33 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <th>Example</th>
       </tr>
       <tr>
-        <td>$avg({p-index} ? 0)</td>
+        <td>$avg</td>
         <td>Averages the values of the path provided for each group</td>
         <td><pre><code>$avg=parameters.Duration
 $avg={$price * ($taxRate + 1)}</code></pre></td>
       </tr>
       <tr>
-        <td>$min({p-index} ? 0)</td>
+        <td>$min</td>
         <td>Selects the min value of the path provided for each group</td>
         <td><pre><code>$min=income</code></pre></td>
       </tr>
       <tr>
-        <td>$max({p-index} ? 0)</td>
+        <td>$max</td>
         <td>Selects the max value of the path provided for each group</td>
         <td><pre><code>$max=age
 $max(2)&lt;=age-sum</code></pre></td>
       </tr>
       <tr>
-        <td>$sum({p-index} ? 0)</td>
+        <td>$sum</td>
         <td>Sums the values of the path provided for each group</td>
         <td><pre><code>$sum=parameters.count</code></pre></td>
       </tr>
     </tbody></table>
+    
+    All aggregative functions accept a single parameter and follow the pattern:
+    <pre><code>$agg-function({aggregation-pipeline-index})</code></pre>
+    
+    You can see an example above on the $max row.
     
     <h3>Grouping on dates</h3>
     

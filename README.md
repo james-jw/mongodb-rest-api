@@ -168,23 +168,23 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <th>Example</th>
       </tr>
       <tr>
-        <td>$avg({pipeline-index} ? 0)</td>
+        <td>$avg({p-index} ? 0)</td>
         <td>Averages the values of the path provided for each group</td>
         <td><pre><code>$avg=parameters.Duration</code></pre></td>
       </tr>
       <tr>
-        <td>$min({pipeline-index} ? 0)</td>
+        <td>$min({p-index} ? 0)</td>
         <td>Selects the min value of the path provided for each group</td>
         <td><pre><code>$min=income</code></pre></td>
       </tr>
       <tr>
-        <td>$max({pipeline-index} ? 0)</td>
+        <td>$max({p-index} ? 0)</td>
         <td>Selects the max value of the path provided for each group</td>
         <td><pre><code>$max=age
 $max(2)<=age-sum</code></pre></td>
       </tr>
       <tr>
-        <td>$sum({pipeline-index} ? 0)</td>
+        <td>$sum({p-index} ? 0)</td>
         <td>Sums the values of the path provided for each group</td>
         <td><pre><code>$sum=parameters.count</code></pre></td>
       </tr>

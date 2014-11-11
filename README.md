@@ -43,13 +43,13 @@
         <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
-        <td>$group-by({pipeline-index} ? 0)</td>
+        <td>$group-by</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
         <td></td>
         <td><pre><code>$group-by=details.class</code></pre></td>
       </tr>
       <tr>
-        <td>$having({path}, {pipeline-index} ? 0)</td>
+        <td>$having({path})</td>
         <td>Performs predication on a group result set.</td>
         <td></td>
         <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>

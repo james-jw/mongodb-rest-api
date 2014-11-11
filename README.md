@@ -125,6 +125,8 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
     
+    All operators with the exception of the <code>$lt; and ></code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the | character.
+    
     <h3>Boolean Operators</h3>
     
     Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. They follow the pattern:

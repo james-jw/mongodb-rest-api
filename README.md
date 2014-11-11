@@ -57,7 +57,7 @@
       </tr>
       <tr>
         <td>$having({path})</td>
-        <td>Performs predication on a group result set.</td>
+        <td>Performs predication on an aggregation result set.</td>
         <td></td>
         <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>
       </tr>

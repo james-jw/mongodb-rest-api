@@ -261,7 +261,7 @@ $max(2)&lt;=age-sum</code></pre></td>
     All aggregative functions accept a single parameter and follow the pattern:
     <pre><code>$agg-function({aggregation-pipeline-index})</code></pre>
     
-    You can see an example above on the $max row.
+    You can see an example above on the $max row. The <code>{aggregation-pipeline-index}</code> is used to place query parameters in the correct index in the aggregation pipeline. See grouping pipelines below:
     
     <h3>Grouping on dates</h3>
     

@@ -151,7 +151,6 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
 
-
     <h2>Grouping</h2>
 
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
@@ -195,9 +194,26 @@ $max(2)&lt;=age-sum</code></pre></td>
     Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is: 
     <pre><code>$group-by={field-path} interval {quantity}[mshdwMQy]</code></pre>
     
-    For example: <pre><code>$group-by=startTimeUtc interval 1w</code></pre> would create a group for each week of events from now.
+    For example, the following would create a group for each week of events from now.
+    <pre><code>$group-by=startTimeUtc interval 1w</code></pre>
 
-    </p><h3>Grouping pipelines (Proposed)</h3>
+    Dates can also be grouped on standard date components:
+    <ul>
+        <li>dayOfYear</li>
+        <li>dayOfMonth</li>
+        <li>dayOfWeek</li>
+        <li>month</li>
+        <li>week</li>
+        <li>hour</li>
+        <li>minute</li>
+        <li>second</li>
+        <li>millisecond</li>
+    </ul>
+    
+    For example, to group by the day of the week (monday, tuesday ...) you could use:
+    <pre><code>$group-by=endTimeUtc dayOfWeek</code></pre>
+    
+    <h3>Grouping pipelines (Proposed)</h3>
     Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
     <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code></pre> 
@@ -209,8 +225,8 @@ $max(2)&lt;=age-sum</code></pre></td>
         
     </p><h2>Examples</h2>
 
-    Find all events with a domain name equal to MINER or NAM and a startTimeUtc within the last week 
-    <pre><code>/rest/v1/events?domain=MINER|NAM&amp;startTimeUtc&gt;=-1w</code></pre>
+    Find all events with a domain name equal to ZEPPELIN or NAM and a startTimeUtc within the last week 
+    <pre><code>/rest/v1/events?domain=ZEPPELIN|NAM&amp;startTimeUtc&gt;=-1w</code></pre>
 
     Group by domain, showing all groups having more than 2000 events
     <pre><code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></pre>

@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>mongodb-rest-api API v1</h1>
+    <h1>mongodb-rest-api v1</h1>
 
     Documentation on using the mongodb REST API.<p>
 
@@ -191,26 +191,26 @@
       <tr>
         <td>$sum</td>
         <td>Sums the values of the path provided for each group</td>
-        <td>$sum=parameters.count</td>
+        <td><pre><code>$sum=parameters.count</code></pre></td>
       </tr>
     </tbody></table>
     
     <h3>Grouping on dates</h3>
     
-    Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is <br>
-    <code>{field-path} interval {quantity}[mshdwMQy]</code><p>
+    Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is 
+    <pre><code>{field-path} interval {quantity}[mshdwMQy]</code></pre>
     
-    For example: <code>$group-by=startTimeUtc interval 1w</code> would create a group for each week of events from now.
+    For example: <pre><code>$group-by=startTimeUtc interval 1w</code></pre> would create a group for each week of events from now.
 
     </p><h3>Grouping pipelines (Proposed)</h3>
     Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
-    <code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code><br> Note: pipeline-index defaults to <code>0</code><p />
+    <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code></pre> Note: pipeline-index defaults to <code>0</code>
     
     For example: <code>$group-by(1)=sum-Duration</code><br>
-    Or with function parameters: <code>$having(sum-duration, 1)&gt;=100</code><p />
+    Or with function parameters: <pre><code>$having(sum-duration, 1)&gt;=100</code></pre>
     
-    Full example: <br /> <code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum&amp;$max(1)=count-sum</code><p /> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min and max count-sum will be returned. 
+    Full example: <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum&amp;$max(1)=count-sum</code></pre> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min and max count-sum will be returned. 
         
     </p><h2>Examples</h2>
 

@@ -206,7 +206,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </p><h3>Grouping pipelines (Proposed)</h3>
     Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
-    <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code></pre> Note: pipeline-index defaults to <code>0</code>
+    <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code></pre> 
     
     For example: <pre><code>$group-by(1)=sum-Duration</code></pre>
     Or with function parameters: <pre><code>$having(sum-duration, 1)&gt;=100</code></pre>

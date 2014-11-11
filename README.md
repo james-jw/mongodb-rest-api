@@ -112,7 +112,32 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <td><pre><code>birthdate&lt;=2012-10-12</code></pre></td>
       </tr>
     </tbody></table>
-
+    
+    <h3>Boolean Operators</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>$and</td>
+            <td>Returns true only when all its expressions evaluate to true. Accepts any number of argument expressions</td>
+            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant</code></pre></td>
+        </tr>
+        <tr>
+            <td>$or</td>
+            <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
+            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&not(name)=antony&$or(1, 2)</code></pre></td>
+        </tr>
+        <tr>
+            <td>$not</td>
+            <td>Returns true when any of its expressions evaluates to true. Accepts any number of argument expressions.</td>
+            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&$or(name, 2)=antony&$or(1, 2)</code></pre></td>
+        </tr>
+        <tr>
+    </table>
+    
     <h3>Querying Dates</h3>
 
     Dates can be queried using standard UTC time formats For example <pre><code>startTimeUtc&lt;=2014-10-11</code></pre>

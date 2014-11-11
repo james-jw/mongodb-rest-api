@@ -70,7 +70,7 @@
     <pre><code>$group-by={$price * ($taxRate + 1)}</code></pre>
 
     <h3>Query Operators</h3>
-    Mongodb collections can be queried via the /rest/v1/{collection-name} endpoint using standard query parameters.
+    Mongodb collections can be queried via the /rest/v1/{collection-name} endpoint using standard query parameters. Here is a list of the currently implemented query operators:
 
     <table>
       <tbody><tr>

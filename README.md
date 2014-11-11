@@ -24,42 +24,42 @@
         <td>Queries against the path provided. Available paths depends on the document structure.</td>
         <td>Querying and grouping</td>
         <td></td>
-        <td><code>name.firstName=John&amp;age>=20</code></td>
+        <td><pre><code>name.firstName=John&amp;age>=20</code></pre></td>
       </tr>
       <tr>
         <td>$skip</td>
         <td>Skips to the result index provided.</td>
         <td>Querying and grouping</td>
         <td><code>0</code></td>
-        <td><code>$skip=100</code></td>
+        <td><pre><code>$skip=100</code></pre></td>
       </tr><tr>
       </tr><tr>
         <td>$limit</td>
         <td>Limits the number of returned results.</td>
         <td>Querying and grouping</td>
         <td><code>25</code></td>
-        <td><code>$limit=30</code></td>
+        <td><pre><code>$limit=30</code></pre></td>
       </tr>
       <tr>
         <td>$sort</td>
         <td>Sorts the results by the path and direction provided</td>
         <td>Querying and grouping</td>
         <td><code>{path} desc</code></td>
-        <td><code>$sort=age asc</code></td>
+        <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
         <td>$group-by</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
         <td>Grouping</td>
         <td></td>
-        <td><code>$group-by=parameters.WorkspaceType</code></td>
+        <td><pre><code>$group-by=parameters.WorkspaceType</code></pre></td>
       </tr>
       <tr>
         <td>$having({path})</td>
         <td>Performs predication on a group result set.</td>
         <td>Grouping</td>
         <td></td>
-        <td><code>$having(sum-count)&gt;=2000</code></td>
+        <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>
       </tr>
     </tbody></table>
 
@@ -75,35 +75,35 @@
       <tr>
         <td>=</td>
         <td>Equates that the property is equals to one of the provided values. You can either provide the param multiple times or seperate values with the | character.</td>
-        <td><code>firstName=John&amp;firstName=Jane</code></td>
+        <td><pre><code>firstName=John&amp;firstName=Jane</code></pre></td>
       </tr>
       <tr>
         <td>*=</td>
         <td>Equates that the property contains the supplied text.</td>
-        <td><code>name*=son</code></td>
+        <td><pre><code>name*=son</code></pre></td>
       </tr>
       <tr>
         <td>~=</td>
         <td>Equates that the property matches one or more of the supplied regular expressions.</td>
         <td>
-           <code>name~=jef.*son</code><br />
-           <code>eventName~=Designer.*Count|Session.*Count</code>
+           <pre><code>name~=jef.*son
+           eventName~=Designer.*Count|Session.*Count</code></pre>
         </td>
       </tr>
       <tr>
         <td>!=</td>
         <td>Equates that the property does not equal one of the provided values. You can either provide the param multiple times or seperate values with the | character.</td>
-        <td><code>lastName!=Smith|Doe</code></td>
+        <td><pre><code>lastName!=Smith|Doe</code></pre></td>
       </tr>
       <tr>
         <td>&gt;=</td>
         <td>Equates that the property is greater than or equal to the supplied value or expression.</td>
-        <td><code>age&gt;=23</code></td>
+        <td><pre><code>age&gt;=23</code></pre></td>
       </tr>
       <tr>
         <td>&lt;=</td>
         <td>Equates that the property is less than or equal to the supplied value or expression.</td>
-        <td><code>birthdate&lt;=2012-10-12</code></td>
+        <td><pre><code>birthdate&lt;=2012-10-12</code></pre></td>
       </tr>
     </tbody></table>
 
@@ -114,8 +114,8 @@
 
     Deltas take the form of <code>[+-]{quantity}[smhdwMQy]</code> </p><p>
 
-    For example: <code>startTimeUtc&gt;=-2d</code> quieries for all events created withing the last 2 days (48 hours).<br>
-    This is equivalent: <code>startTimeUtc&gt;=-48h</code></p><p>
+    For example: <pre><code>startTimeUtc&gt;=-2d</code></pre> quieries for all events created withing the last 2 days (48 hours).<br>
+    This is equivalent: <pre><code>startTimeUtc&gt;=-48h</code></pre>
 
     The possible intervals are:
     </p><table>
@@ -176,17 +176,17 @@
       <tr>
         <td>$avg</td>
         <td>Averages the values of the path provided for each group</td>
-        <td>$avg=parameters.Duration</td>
+        <td><pre><code>$avg=parameters.Duration</code></pre></td>
       </tr>
       <tr>
         <td>$min</td>
         <td>Selects the min value of the path provided for each group</td>
-        <td>$min=income</td>
+        <td><pre><code>$min=income</code></pre></td>
       </tr>
       <tr>
         <td>$max</td>
         <td>Selects the max value of the path provided for each group</td>
-        <td>$max=age</td>
+        <td><pre><code>$max=age</code></pre></td>
       </tr>
       <tr>
         <td>$sum</td>
@@ -210,7 +210,7 @@
     For example: <code>$group-by(1)=sum-Duration</code><br>
     Or with function parameters: <pre><code>$having(sum-duration, 1)&gt;=100</code></pre>
     
-    Full example: <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum&amp;$max(1)=count-sum</code></pre> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min and max count-sum will be returned. 
+    Full example: <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned. 
         
     </p><h2>Examples</h2>
 

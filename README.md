@@ -3,7 +3,7 @@
 
     Documentation on using the mongodb REST API.<p>
 
-    Raw endpoint: <code>/rest/v1/{collection-name}</code><br>
+    Raw endpoint: <code>/rest/v1/{collection-name}</code><br />
     For example: <code>/rest/v1/events</code></p><p>
 
     </p><h2>Querying</h2>
@@ -87,7 +87,7 @@
         <td>Equates that the property matches one or more of the supplied regular expressions.</td>
         <td>
            <pre><code>name~=jef.*son
-           eventName~=Designer.*Count|Session.*Count</code></pre>
+eventName~=Designer.*Count|Session.*Count</code></pre>
         </td>
       </tr>
       <tr>
@@ -109,12 +109,13 @@
 
     <h3>Querying Dates</h3>
 
-    Dates can be queried using standard UTC time formats.<br />
-    For example <code>startTimeUtc&lt;=2014-10-11</code>. Alternatively deltas can be used as well. <p>
+    Dates can be queried using standard UTC time formats For example <pre><code>startTimeUtc&lt;=2014-10-11</code></pre>
+    Alternatively deltas can be used as well. <p>
 
     Deltas take the form of <code>[+-]{quantity}[smhdwMQy]</code> </p><p>
 
-    For example: <pre><code>startTimeUtc&gt;=-2d</code></pre> quieries for all events created withing the last 2 days (48 hours).<br>
+    For example, the following quieries for all events created withing the last 2 days (48 hours).   
+    <pre><code>startTimeUtc&gt;=-2d</code></pre>
     This is equivalent: <pre><code>startTimeUtc&gt;=-48h</code></pre>
 
     The possible intervals are:
@@ -162,8 +163,8 @@
 
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
 
-    When an aggergate function is used the resulting group field will be named using this logic:<br>
-    <code>{final-field-name}-{function-name}</code>. For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
+    When an aggergate function is used the resulting group field will be named using this logic:
+    <pre><code>{final-field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     Below is a list of functions which can be performed on the groups:
 
@@ -207,7 +208,7 @@
     
     <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code></pre> Note: pipeline-index defaults to <code>0</code>
     
-    For example: <code>$group-by(1)=sum-Duration</code><br>
+    For example: <pre><code>$group-by(1)=sum-Duration</code></pre>
     Or with function parameters: <pre><code>$having(sum-duration, 1)&gt;=100</code></pre>
     
     Full example: <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned. 

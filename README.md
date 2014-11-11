@@ -128,8 +128,10 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     <h3>Boolean Operators</h3>
     
-    Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. 
+    Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. They follow the pattern:
+    <pre><code>$op({path}, {group-index}? || 0)</code></pre>
     
+    Here is a list of the avaiable operators and some examples:
     <table>
         <tr>
             <th>Name</th>

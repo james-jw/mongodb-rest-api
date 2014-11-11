@@ -159,7 +159,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
             <td>$not</td>
             <td>Returns true when any of its expressions evaluates to true. Accepts any number of argument expressions.</td>
-            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&$or(name, 2)=antony&$or(1, 2)</code></pre></td>
+            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&$or(age, 2)>=20&$or(1, 2)</code></pre></td>
         </tr>
         <tr>
     </table>

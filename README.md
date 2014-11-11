@@ -132,7 +132,9 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
             <td>$or</td>
             <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
             <td><pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
-            The above query translates to <pre><code>{$or: { $and: { name: { $regex: "tony", $not: { $regex: "ant" }}}, name: "anthony"}}</code></pre> or in plain english. All documents with a name matching tony but not ant, or having the exact name of antony. Note
+            The above query translates to 
+            <pre><code>{$or: [{ $and: [{ name: { $regex: "tony" }}, { name: { $not: {$regex: "ant" }}} ], { name: "anthony"}}]</code></pre> or in plain english. 
+            All documents with a name matching tony but not ant, or having the exact name of antony. Note
             </td>
         </tr>
         <tr>

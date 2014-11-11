@@ -46,7 +46,7 @@
         <td>$group-by({pipeline-index} ? 0)</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
         <td></td>
-        <td><pre><code>$group-by=parameters.WorkspaceType</code></pre></td>
+        <td><pre><code>$group-by=details.class</code></pre></td>
       </tr>
       <tr>
         <td>$having({path}, {pipeline-index} ? 0)</td>

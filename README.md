@@ -182,7 +182,8 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       <tr>
         <td>$avg({p-index} ? 0)</td>
         <td>Averages the values of the path provided for each group</td>
-        <td><pre><code>$avg=parameters.Duration</code></pre></td>
+        <td><pre><code>$avg=parameters.Duration
+$avg={$price * ($taxRate + 1)}</code></pre></td>
       </tr>
       <tr>
         <td>$min({p-index} ? 0)</td>

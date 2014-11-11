@@ -126,12 +126,14 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
             <td>$and</td>
             <td>Returns true only when all its expressions evaluate to true. Accepts any number of argument expressions</td>
-            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant</code></pre></td>
+            <td><pre><code>$and(name)~=tony&$and(name)!~=ant</code></pre></td>
         </tr>
         <tr>
             <td>$or</td>
             <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
-            <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&or(name, 2)=antony&$or(1, 2)</code></pre></td>
+            <td><pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
+            The above query translates to <pre><code>{$or: { $and: { name: { $regex: "tony", $not: { $regex: "ant" }}}, name: "anthony"}}</code></pre> or in plain english. All documents with a name matching tony but not ant, or having the exact name of antony. Note
+            </td>
         </tr>
         <tr>
             <td>$not</td>

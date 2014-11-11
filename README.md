@@ -1,4 +1,3 @@
-<div class="container">
     <h1>mongodb-rest-api API v1</h1>
 
     Documentation on using the mongodb REST API.<p>
@@ -218,4 +217,4 @@
 
     Group by domain and eventName showing all groups having an average paramters.Duration less than 10<br>
     <code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></p><p>
-  </p></div>
+  </p>

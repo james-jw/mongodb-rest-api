@@ -129,7 +129,9 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <h3>Boolean Operators</h3>
     
     Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. They follow the pattern:
-    <pre><code>$op({path}, {group-index}? || 0)</code></pre>
+    <pre><code>${boolean-operator}({path}, {group-index}? || 0){operator}={expression}</code></pre>
+    
+    The <code>{group-index}</code> is used to construct groups of parameters. The <code>{path}</code> parameter can either reference a document path including support for 'dot notation' or a <code>{group-index}</code> to allow for sub grouping.<br />
     
     Here is a list of the avaiable operators and some examples:
     <table>

@@ -84,8 +84,11 @@
       </tr>
       <tr>
         <td>~=</td>
-        <td>Equates that the property matches the supplied regular expression.</td>
-        <td><code>name~=jef.*son</code></td>
+        <td>Equates that the property matches one or more of the supplied regular expressions.</td>
+        <td>
+           <code>name~=jef.*son</code><br />
+           <code>eventName~=Designer.*Count|Session.*Count</code>
+        </td>
       </tr>
       <tr>
         <td>!=</td>

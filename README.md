@@ -24,7 +24,7 @@
         <td>Queries against the path provided. Available paths depends on the document structure.</td>
         <td>Querying and grouping</td>
         <td></td>
-        <td><code>name.firstName=John&amp;name.lastName!=Does</code></td>
+        <td><code>name.firstName=John&amp;age>=20</code></td>
       </tr>
       <tr>
         <td>$skip</td>

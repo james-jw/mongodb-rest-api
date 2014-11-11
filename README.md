@@ -204,9 +204,9 @@
     <code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={value or path}</code><br> Note: pipeline-index defaults to <code>0</code><p />
     
     For example: <code>$group-by(1)=sum-Duration</code><br>
-    Or with function parameters: <code>$having(sum-duration, 1)&gt;=100</code></p><p>
+    Or with function parameters: <code>$having(sum-duration, 1)&gt;=100</code><p />
     
-    Full example: <code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum&amp;$max(1)=count-sum</code> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min and max count-sum will be returned. 
+    Full example: <br /> <code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum&amp;$max(1)=count-sum</code><p /> would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min and max count-sum will be returned. 
         
     </p><h2>Examples</h2>
 

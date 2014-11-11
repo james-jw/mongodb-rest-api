@@ -181,7 +181,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <td>$max({p-index} ? 0)</td>
         <td>Selects the max value of the path provided for each group</td>
         <td><pre><code>$max=age
-$max(2)<=age-sum</code></pre></td>
+$max(2)&lt;=age-sum</code></pre></td>
       </tr>
       <tr>
         <td>$sum({p-index} ? 0)</td>

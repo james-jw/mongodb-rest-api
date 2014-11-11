@@ -159,7 +159,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
     </table>
     
-    <h4>Sub-grouping</h4>
+    <h4>Conditional-grouping</h4>
     Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both $or operations are in group 1. The second $or operatio however references group 0 as its input thus adding group 0 as a sub group. Both $and operations are in group zero since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
             The above query translates to 

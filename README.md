@@ -28,7 +28,7 @@
         <td>{Calculation} (Proposed)</td>
         <td>Queries against the path provided using a dynamic javascript expression as the input. The expression must be encapsulated within the <code>{ }</code> brackets.</td>
         <td></td>
-        <td><pre><code>{firstName + lastName}=JohnDoe
+        <td><pre><code>{$firstName + $lastName}=JohnDoe
 {price * tax}&lt;=200</code></pre></td>
       </tr>
       <tr>
@@ -63,9 +63,11 @@
       </tr>
     </tbody></table>
     
-    As with the {Calculate} parameter. Expressions can be used on the right side of the operator. For example to group by orders by their final, after tax price you could write:
+    <h4>Expressions</h4>
+
+    Expressions have already been mentioned via the above {Calculate} parameter. Expressions can be used on either side of operator. For example to group orders by their final after tax price you could write:
     
-    <pre><code>$group-by={price * (tax + 1)}</code></pre>
+    <pre><code>$group-by={$price * ($taxRate + 1)}</code></pre>
 
     <h3>Query Operators</h3>
     Mongodb collections can be queried via the /rest/v1/{collection-name} endpoint using standard query parameters.

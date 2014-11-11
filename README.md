@@ -192,8 +192,8 @@ $max(2)<=age-sum</code></pre></td>
     
     <h3>Grouping on dates</h3>
     
-    Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is 
-    <pre><code>{field-path} interval {quantity}[mshdwMQy]</code></pre>
+    Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is: 
+    <pre><code>$group-by={field-path} interval {quantity}[mshdwMQy]</code></pre>
     
     For example: <pre><code>$group-by=startTimeUtc interval 1w</code></pre> would create a group for each week of events from now.
 

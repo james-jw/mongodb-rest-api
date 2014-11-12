@@ -12,7 +12,7 @@
     <pre><code>{
     "@context": "{metadata-base-reference}",
     "@type": "{metadata-type}"
-    count: {page-size},
+    count: {full-result-count},
     list: [ ... {items/groups} ... ],
     next: "/rest/v1/{collection}?query&$skip=50,
     previous: "/rest/v1/{collection}?query&$skip=25

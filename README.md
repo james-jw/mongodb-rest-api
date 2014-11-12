@@ -309,10 +309,10 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>list: [{
     _id: {
         state: 'Arizona',
-        city: 'Tucson',
-        self: '/rest/v1/people?state=Arizona&city=Tucson'
+        city: 'Tucson'
     },
-    count: 23
+    count: 23,
+    self: '/rest/v1/people?state=Arizona&city=Tucson'
 }, ... ]</code></pre>
     
     <h3>Aggregation Functions</h3>

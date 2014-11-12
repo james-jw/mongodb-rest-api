@@ -54,17 +54,18 @@
     "@context": "{metadata-base-reference}",
     "count": {full-result-count},
     "@graph": [{
-          "state": "Arizona",
-          "city": "Tucson",
-          "count": 23,
-          "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-      },
-      {
-          "state": "Arizona",
-          "city": "Phoenix",
-          "count": 340,
-          "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-      } ... ],
+        "state": "Arizona",
+        "city": "Tucson",
+        "count": 23,
+        "@id": "/rest/v1/people?state=Arizona&city=Tucson"
+        },
+        {
+        "state": "Arizona",
+        "city": "Phoenix",
+        "count": 340,
+        "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
+        } ... 
+    ],
     "next": {
         "name": "Next Page",
         "target": [{

@@ -58,14 +58,13 @@
         "city": "Tucson",
         "count": 23,
         "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-        },
-        {
+    },
+    {
         "state": "Arizona",
         "city": "Phoenix",
         "count": 340,
         "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-        } ... 
-    ],
+    } ... ],
     "next": {
         "name": "Next Page",
         "target": [{

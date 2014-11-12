@@ -1,10 +1,16 @@
 <div class="container">
     <h1>mongodb-rest-api v1</h1>
 
-    Documentation on using the mongodb REST API.<p>
+    Documentation on a proposed Mongodb compliant REST API for use with generic collections.<p>
+    
+    The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of mongodb collections.
 
     Raw endpoint: <code>/rest/v1/{collection-name}</code><br />
     For example: <code>/rest/v1/events</code></p>
+    
+    <h2>Versioning<h2>
+    Currently the api is at version 1. The endpoints URL should include the version number.
+    <code>/rest/{version-number}/{endpoints...}</code>
     
     <h2>Pagination</h2>
     All collection endpoints, whether querying or grouping will return a pageable list. For example:
@@ -46,6 +52,10 @@
             <td>Link to previous page of results.</td>
         </tr>
     </table>
+    
+    <h2>Metadata</h2>
+    
+    Metadata is provided via the same mechanism as JSON-LD. See git-hub JSON-LD for more details. In particular through the use of the <code>@context</code> and <code>@type</code> response properties. 
     
     <h2>Querying</h2>
     <h3>Query parameters</h3>

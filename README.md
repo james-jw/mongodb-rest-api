@@ -338,10 +338,8 @@ $max:1=age-sum</code></pre></td>
       </tr>
     </tbody></table>
     
-    All aggregative functions accept at least a single parameter with follow the pattern:
-    <pre><code>$agg-function():{pipeline-index})</code></pre>
-    
-    You can see an example above on the $max row. See grouping pipelines below:
+    All aggregative functions can operate on multiple fields. You can either supply the parameter multiple times or seperate a single aggregate functions param values with a <code>,</code>. For example, the following would sum both the orders and returns fields:
+    <pre><code>$sum=orders,returns</code></pre>
     
     <h3>Grouping on dates</h3>
     

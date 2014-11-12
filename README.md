@@ -305,13 +305,13 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 }</code></pre>
     
     as opposed to:
-    <pre><code>[{
+    <pre><code>list: [{
     _id: {
         state: "Arizona",
         city: "Tucson"
     },
     count: 23
-    } ... ]</code></pre>
+}, ... ]</code></pre>
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

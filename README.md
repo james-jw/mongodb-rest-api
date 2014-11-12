@@ -3,9 +3,10 @@
 
     Documentation on a proposed Mongodb compliant REST API for use with generic collections.<p>
     
-    The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of mongodb collections.
+    The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of mongodb collections. <p />
 
-    Raw endpoint: <code>/rest/v1/{collection-name}</code><br />
+    Endpoint: <code>{service-path}/rest/v1/{collection-name}</code><br />
+    
     For example: <code>/rest/v1/events</code></p>
     
     <h2>Versioning</h2>

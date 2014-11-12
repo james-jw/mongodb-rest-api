@@ -122,7 +122,7 @@
     
     <h4>Expressions</h4>
 
-    Expressions have already been mentioned via the above {Calculate} parameter. Expressions can be used on either side of operator. For example to group orders by their final after tax price you could write:
+    Expressions can be used to generate dynamic values for use in querying and grouping. Expressions are permitted on either side of operator and surrounded with brackets:<code>{ }</code>. For example to group orders by their final after tax price you could write:
     
     <pre><code>$group-by={$price * ($taxRate + 1)}</code></pre>
 

@@ -200,7 +200,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
             <td>$not</td>
             <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
-            <td><pre><code>$not(age)&tl;=20</code></pre>
+            <td><pre><code>$not(age)&lt;=20</code></pre>
             </td>
         </tr>
         <tr>

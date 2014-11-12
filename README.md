@@ -289,7 +289,9 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </p><p>
     
     To circumvent this logic and provide a defined alias simple postfix the aggregation function with the pattern:
-    <pre><code>$agg-function() as {alias}</code></pre>
+    <pre><code>$agg-function({normal-params}, {alias})</code></pre>
+    
+    Alias will always be the last parameter. 
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

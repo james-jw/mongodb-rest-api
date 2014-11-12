@@ -297,18 +297,20 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>{  
     count: 2089,
     list: [{
-        state: "Arizona",
-        city: "Tucson",
-        count: 23
+        state: 'Arizona',
+        city: 'Tucson',
+        count: 23,
+        self: '/rest/v1/people?state=Arizona&city=Tucson'
     } ... ],
-    next: "/rest/v1/people?$group-by=state&$group-by=city&$skip=25
+    next: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25'
 }</code></pre>
     
     as opposed to:
     <pre><code>list: [{
     _id: {
-        state: "Arizona",
-        city: "Tucson"
+        state: 'Arizona',
+        city: 'Tucson',
+        self: '/rest/v1/people?state=Arizona&city=Tucson'
     },
     count: 23
 }, ... ]</code></pre>

@@ -32,7 +32,6 @@
     "@context": {
         "schema": "http://some-schema.org/",
         "name": "schema:Person#name",
-        "details": "schema:PersonDetails",
         "income": "schema:Person#income",
         "maritalStatus": "schema:Person#maritalStatus",
         "age": "schema:Person#age",

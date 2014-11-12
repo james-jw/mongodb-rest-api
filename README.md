@@ -294,8 +294,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     
     will result in:
-    <pre><code>
-{  
+    <pre><code>{  
     count: 2089,
     list: [{
         state: "Arizona",
@@ -303,20 +302,16 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         count: 23
     } ... ],
     next: "/rest/v1/people?$group-by=state&$group-by=city&$skip=25
-}
-    </code></pre>
+}</code></pre>
     
     as opposed to:
-    <pre><code>
-... [{
+    <pre><code>[{
     _id: {
         state: "Arizona",
         city: "Tucson"
     },
     count: 23
-    } ... ] 
-...
-    </code></pre>
+    } ... ]</code></pre>
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

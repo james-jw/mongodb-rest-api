@@ -164,9 +164,10 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both $or operations are in group 1. The second $or operatio however references group 0 as its input thus adding group 0 as a sub group. Both $and operations are in group zero since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
             The above query translates to 
-            <pre><code>{$or: [{ $and: [{ name: { $regex: "tony" }}, 
-    { name: { $not: {$regex: "ant" }}} ],
-    { name: "anthony"}}]</code></pre> In plain english:
+            <pre><code>{$or: 
+    [{ $and: [{ name: { $regex: "tony" }}, { name: { $not: {$regex: "ant" }}} ],
+    { name: "anthony"}
+}]</code></pre> In plain english:
             All documents with a name matching <code>tony</code> but not <code>ant</code>, or having the exact name of      <code>antony</code>. 
     
     <h3>Querying Dates</h3>

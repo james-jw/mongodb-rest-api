@@ -378,9 +378,10 @@ $max:1=age-sum</code></pre></td>
     
     <pre><code>{parameter-name({function-params}?):{pipeline-index? || 0}{operator}?={expression}</code></pre> 
     
-    For example: <pre><code>$group-by:1=Duration-sum</code></pre>
+    For example, the following would group by <code>Duration-sum</code> on the second stage of pipeline. The first state is 0 and is implied by default if no <code>pipeline-index</code> is specified:         
+    <pre><code>$group-by=domain&$sum=parameters.Duration&$group-by:1=Duration-sum</code></pre>
     
-    Here is what it looks like if a function accepts one or more parameters.
+    Here is what it looks like if a function also accepts one or more parameters:
     <pre><code>$last(5):1=people</code></pre>
     
     Predicating on groups can be accomplished with this technique as well. Its similar to sql's <code>having</code> keyword.

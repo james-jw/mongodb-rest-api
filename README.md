@@ -276,12 +276,13 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     When a $group-by paramter is provided to the query endpoint, an aggregation is performed. Paths can reference deep properties via standard javascript 'dot notation'. Additionally, multiple group bys are allowed. <p>
 
-    <h3>Aliasing</h3>
+    <h3>Default Aliasing</h3>
     
     When an aggergate function is used. The resulting group's corresponding property will be named using the following logic:
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     
+    <h3>Defined Aliasing</h3>
     An alias can be defined to circumvent this logic and are provided using the following pattern:
     <pre><code>$agg-function({params}?) as {alias}</code></pre>
     

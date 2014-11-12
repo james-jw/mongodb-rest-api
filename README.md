@@ -44,7 +44,6 @@
     
     <pre><code>{
     "@context": "{metadata-base-reference}",
-    "@type": "{metadata-type}",
     count: {full-result-count},
     list: [ ... {items/groups} ... ],
     next: {

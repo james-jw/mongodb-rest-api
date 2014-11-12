@@ -282,7 +282,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
 
-    <h3>Aggregate Alliasing</h3>
+    <h3>Aliasing</h3>
     
     When an aggergate function is used. The resulting group's corresponding field will be named using the following logic:
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
@@ -293,6 +293,19 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     Alias will always be the last parameter. For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':
     <pre><code>$last(5, lastFiveOrders)=orders</code></pre> 
+    
+    <h3>Response Format</h3>
+    All grouped responses will have their keys flattened. For example:
+    <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
+    
+    will result in:
+    <pre><code>
+[{
+    state: "Arizona",
+    city: "Tucson",
+    count: 23
+} ... ]
+    </code></pre>
     
     
     <h3>Aggregation Functions</h3>

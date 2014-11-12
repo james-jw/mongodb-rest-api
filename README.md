@@ -20,7 +20,33 @@
 }</code>
     </pre>
     
-    
+    Property descriptions:
+    <table>
+        <tr>
+            <td>@context</td>
+            <td>The metadata context or base path of the page.</td>
+        </tr>
+        <tr>
+            <td>@type</td>
+            <td>The type of results returned.</td>
+        </tr>
+        <tr>
+            <td>count</td>
+            <td>Full count of results</td>
+        </tr>
+        <tr>
+            <td>list</td>
+            <td>Actual list of results</td>
+        </tr>
+        <tr>
+            <td>next</td>
+            <td>Link to next page of results.</td>
+        </tr>
+        <tr>
+            <td>previous</td>
+            <td>Link to previous page of results.</td>
+        </tr>
+    </table>
     @context - references the path to retreive type metadata
     @type - the type the collection contains
     count - ull count of results or page size (implementation specific)

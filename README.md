@@ -180,7 +180,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     <h3>Boolean Operators</h3>
     
-    Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. First, the {path} and additionally an optional {group-index} parameter. If not index is provided, it is assumed to be against group 0. They follow the pattern:
+    Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. A {path or group-reference} and additionally an optional {group-index} parameter. If no <code>group-index</code> is provided, the operation is assumed to be against group <code>0</code>. Boolean operators can used by follow the pattern:
     <pre><code>${boolean-operator}({path}, {group-index}? || 0){operator}={expression}</code></pre>
     
     The <code>{group-index}</code> is used to construct groups of parameters. The <code>{path}</code> parameter can either reference a document path including support for 'dot notation' or a <code>{group-index}</code> to allow for sub grouping.<br />
@@ -212,7 +212,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </table>
     
     <h4>Boolean grouping</h4>
-    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group <code>0</code> since they do not reference a group-index.
+    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note, that in the following expression <code>$or(name, 1)&$or(0, 1)</code>, both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group <code>0</code> since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
             The above query translates to :
             <pre><code>{$or: [ 

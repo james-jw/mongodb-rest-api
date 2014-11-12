@@ -1,5 +1,5 @@
 <style>
-    div pre { background-image: url(http://media.mongodb.org.s3.amazonaws.com/code-block-bg.png) }
+    .markdown-body .highlight pre { background-image: url(http://media.mongodb.org.s3.amazonaws.com/code-block-bg.png) }
 </style>
 <div class="container">
     <h1>mongodb-rest-api v1</h1>

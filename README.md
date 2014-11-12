@@ -44,8 +44,8 @@
     
     <pre><code>{
     "@context": "{metadata-base-reference}",
-    count: {full-result-count},
-    @graph: [ ... {items/groups} ... ],
+    "count": {full-result-count},
+    "@graph": [ ... {items/groups} ... ],
     "next": {
         "name": "Next Page",
         "target": [{

@@ -330,14 +330,14 @@ $max(2)=age-sum</code></pre></td>
       <tr>
         <td>$first({count})</td>
         <td>Returns the first item(s) in a group. A count can be provided to select a number of items.</td>
-        <td><pre><code>$last=employee</code></pre></td>
+        <td><pre><code>$first(5)=employee</code></pre></td>
       </tr>
     </tbody></table>
     
-    All aggregative functions accept a single parameter and follow the pattern:
+    All aggregative functions accept at least a single parameter with follow the pattern:
     <pre><code>$agg-function({aggregation-pipeline-index})</code></pre>
     
-    You can see an example above on the $max row. The <code>{aggregation-pipeline-index}</code> is used to place query parameters in the correct index in the aggregation pipeline. See grouping pipelines below:
+    You can see an example above on the $max row. See grouping pipelines below:
     
     <h3>Grouping on dates</h3>
     
@@ -369,7 +369,9 @@ $max(2)=age-sum</code></pre></td>
     <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={expression}</code></pre> 
     
     For example: <pre><code>$group-by(1)=Duration-sum</code></pre>
-    Or with function parameters: <pre><code>$having(Duration-sum, 1)&gt;=100</code></pre>
+    
+    If a function accepts parameters already, the <code>{pipeline-index}</code> will always be last.
+    <pre><code>$having(Duration-sum, 1)&gt;=100</code></pre>
     
     The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> 
         

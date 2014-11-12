@@ -8,7 +8,7 @@
     Raw endpoint: <code>/rest/v1/{collection-name}</code><br />
     For example: <code>/rest/v1/events</code></p>
     
-    <h2>Versioning<h2>
+    <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number.
     <code>/rest/{version-number}/{endpoints...}</code>
     

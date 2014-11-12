@@ -389,7 +389,7 @@ $max:1=age-sum</code></pre></td>
     <pre><code>$having(Duration-sum):1&gt;=100</code></pre>
     <pre><code>$last(5):1=people</code></pre>
     
-    The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by:1=count-avg&amp;$min:1=count-sum</code></pre> 
+    The following would group by <code>domain</code>, calculating the <code>avg</code> and <code>sum</code> <code>count</code> during the first pass. On the second pass, the resulting groups will themselves be grouped by the <code>count-avg</code> and for each group the <code>min</code> <code>count-sum</code> will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by:1=count-avg&amp;$min:1=count-sum</code></pre> 
         
     </p><h2>Further Examples</h2>
 

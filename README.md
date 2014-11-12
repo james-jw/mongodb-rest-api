@@ -280,7 +280,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     <h2>Grouping</h2>
 
-    When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
+    When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Paths can reference deep properties via the standard javascript 'dot notation'. Additionally, multiple group bys are allowed. <p>
 
     <h3>Aliasing</h3>
     

@@ -327,12 +327,12 @@ $max:1=age-sum</code></pre></td>
         <td><pre><code>$sum=parameters.count</code></pre></td>
       </tr>
       <tr>
-        <td>$last({count}? || 1)</td>
+        <td>$last({count}?)</td>
         <td>Returns the last item(s) in a group. A count can be provided to select a number of items.</td>
         <td><pre><code>$last=employee</code></pre></td>
       </tr>
       <tr>
-        <td>$first({count}? || 1)</td>
+        <td>$first({count}?)</td>
         <td>Returns the first item(s) in a group. A count can be provided to select a number of items.</td>
         <td><pre><code>$first(5)=employee</code></pre></td>
       </tr>

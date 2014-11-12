@@ -250,7 +250,7 @@ $avg={$price * ($taxRate + 1)}</code></pre></td>
         <td>$max</td>
         <td>Selects the max value of the path provided for each group</td>
         <td><pre><code>$max=age
-$max(2)&lt;=age-sum</code></pre></td>
+$max(2)=age-sum</code></pre></td>
       </tr>
       <tr>
         <td>$sum</td>

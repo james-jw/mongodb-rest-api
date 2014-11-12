@@ -218,7 +218,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </table>
     
     <h4>Boolean grouping</h4>
-    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both $or operations are in group 1. The second $or operatio however references group 0 as its input thus adding group 0 as a sub group. Both $and operations are in group zero since they do not reference a group-index.
+    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group zero since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
             The above query translates to 
             <pre><code>{$or: 
@@ -229,16 +229,16 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     <h3>Querying Dates</h3>
 
-    Dates can be queried using standard UTC time formats For example <pre><code>startTimeUtc&lt;=2014-10-11</code></pre>
-    Alternatively deltas can be used as well. <p>
+    Dates can be queried using standard UTC time format. For example: <pre><code>startTimeUtc&lt;=2014-10-11</code></pre>
+    Alternatively durations can be used: <p>
 
-    Deltas take the form of <code>[+-]{quantity}[smhdwMQy]</code> </p><p>
+    Durations take the form of <code>[-]{quantity}[smhdwMQy]</code> </p><p>
 
     For example, the following expression would query for all documents with a startTimeUtc property having a value withing the last 2 days (48 hours).   
     <pre><code>startTimeUtc&gt;=-2d</code></pre>
     This is equivalent: <pre><code>startTimeUtc&gt;=-48h</code></pre>
 
-    The possible intervals are:
+    The possible durations are:
     </p><table>
       <tbody><tr>
         <th>Symbol</th>
@@ -280,11 +280,11 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     <h2>Grouping</h2>
 
-    When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Paths can reference deep properties via the standard javascript 'dot notation'. Additionally, multiple group bys are allowed. <p>
+    When a $group-by paramter is provided to the query endpoint, an aggregation is performed. Paths can reference deep properties via standard javascript 'dot notation'. Additionally, multiple group bys are allowed. <p>
 
     <h3>Aliasing</h3>
     
-    When an aggergate function is used. The resulting group's corresponding field will be named using the following logic:
+    When an aggergate function is used. The resulting group's corresponding property will be named using the following logic:
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     

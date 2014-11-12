@@ -370,7 +370,7 @@ $max:1=age-sum</code></pre></td>
     
     For example: <pre><code>$group-by:1=Duration-sum</code></pre>
     
-    If a function accepts one or more parameters, the <code>{pipeline-index}</code> will always be the last parameter.
+    Here is what it looks like if a function accepts one or more parameters.
     <pre><code>$having(Duration-sum):1&gt;=100</code></pre>
     <pre><code>$last(5):1=people</code></pre>
     

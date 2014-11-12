@@ -22,6 +22,8 @@
     Objects returned from a query will more or less resemble the document they originate from with a few exceptions:
     
     <ol>
+        <li>JSON-LD keywords are added as neccessary to describe the output format. See 
+<a href="http://www.w3.org/TR/json-ld/#the-context">JSON-LD @context</a> for more details JSON-LD</li>
         <li>_id is replaced with a '@id' item to match the JSON-LD specification.</li>
         <li>Sub-properties will be retained
     </ol>

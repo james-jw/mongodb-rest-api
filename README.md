@@ -283,7 +283,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </p><p>
     
     <h3>Defined Aliasing</h3>
-    An alias can be defined to circumvent this logic and are provided using the following pattern:
+    An alias can be defined to circumvent this logic and is provided using the following pattern:
     <pre><code>$agg-function({params}?) as {alias}</code></pre>
     
     For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':

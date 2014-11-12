@@ -356,7 +356,7 @@ $max(2)=age-sum</code></pre></td>
     
     The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> 
         
-    </p><h2>Examples</h2>
+    </p><h2>Further Examples</h2>
 
     Find all events with a domain name equal to ZEPPELIN or NAM and a startTimeUtc within the last week 
     <pre><code>/rest/v1/events?domain=ZEPPELIN|NAM&amp;startTimeUtc&gt;=-1w</code></pre>
@@ -366,6 +366,10 @@ $max(2)=age-sum</code></pre></td>
 
     Group by domain and eventName showing all groups having an average paramters.Duration less than 10
     <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
+    
+    Return largest and smallest cities by state. (Taken from mongdb documentatin)
+    <pre><code>/rest/v1/cities?$group-by=state$group-by=city&sum(pop)=pop&$sort=pop asc&$group-by(1)=state
+&$last(biggestCity, 1)=city&$last(biggestPop, 1)&$first(smallestCity)=city&$first(smallestPop)=pop</pre></code>
     
   </p>
 </div>

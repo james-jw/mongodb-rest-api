@@ -1,6 +1,3 @@
-<head><style>
-    .markdown-body .highlight pre { background-image: url(http://media.mongodb.org.s3.amazonaws.com/code-block-bg.png) }
-</style></head>
 <div class="container">
     <h1>mongodb-rest-api v1</h1>
 

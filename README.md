@@ -234,7 +234,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     Durations take the form of <code>[-]{quantity}[smhdwMQy]</code> </p><p>
 
-    For example, the following expression would query for all documents with a startTimeUtc property having a value withing the last 2 days (48 hours).   
+    For example, the following expression would query for all documents with a startTimeUtc property having a value within the last 2 days (48 hours).   
     <pre><code>startTimeUtc&gt;=-2d</code></pre>
     This is equivalent: <pre><code>startTimeUtc&gt;=-48h</code></pre>
 

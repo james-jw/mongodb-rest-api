@@ -91,33 +91,68 @@
     
     Here is an example out from a grouping operation with the @context embedded:
     <pre><code>{
+  "@context": {
+    "schema": "http://schema.org/",
+    "state": "schema:State#name",
+    "city": "schema:City#name",
+    "count": "schema:Quantity",
+    "next": "schema:PotentialAction",
+    "name": "schema:PotentialAction#name",
+    "target": "schema:EntryPoint",
+    "urlTemplate": "schema:EntryPoint#urlTemplate",
+    "contentType": "schema:EntryPoint#contentType"
+  },
+  "count": 2089,
+  "@id": "/rest/v1/people?$group-by=state&$group-by=city",
+  "@graph": [{
+      "state": "Arizona",
+      "city": "Tucson",
+      "count": 23,
+      "@id": "/rest/v1/people?state=Arizona&city=Tucson"
+  },
+  {
+      "state": "Arizona",
+      "city": "Phoenix",
+      "count": 340,
+      "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
+  }],
+  "next": {
+    "name": "Next Page",
+    "target": [{
+        "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+     	"contentType": "application/json-ld"       
+    }]
+  }
+ }
+    
+    
+    
+    {
     @context: {
-        schema: "http://schema.org",
-        xs: "http//www.xsd.org/2001",
-        state: "schema:state#name",
-        city: "schema:city#name",
-        count: { @type: "xs:integer" },
-        next: { 
-            @type: "ViewAction"
-        }
+        "schema": "http://schema.org",
+        "xs": "http//www.xsd.org/2001",
+        "state": "schema:state#name",
+        "city": "schema:city#name",
+        "count": { "@type": "xs:integer" }
     },
-    count: 2089,
-    list: [{
-        state: 'Arizona',
-        city: 'Tucson',
-        count: 23,
-        @id: '/rest/v1/people?state=Arizona&city=Tucson'
+    "count": 2089,
+    "list": [{
+        "state": "Arizona",
+        "city": "Tucson",
+        "count": 23,
+        "@id": "/rest/v1/people?state=Arizona&city=Tucson"
     },
     {
-        state: 'Arizona',
-        city: 'Phoenix',
-        count: 340,
-        @id: '/rest/v1/people?state=Arizona&city=Phoenix'
+        "state": "Arizona",
+        "city": "Phoenix",
+        "count": 340,
+        "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
     },
     ... ],
-    next: {
-        url: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25',
-        name: 'Next Page',
+    "next": {
+        "@type": "ViewAction",
+        "url": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+        "name": "Next Page",
     }
 }</code></pre>
     

@@ -367,7 +367,7 @@ $max(2)=age-sum</code></pre></td>
     Group by domain and eventName showing all groups having an average paramters.Duration less than 10
     <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
     
-    Return largest and smallest cities by state. (Taken from mongdb documentatin)
+    Return largest and smallest cities by state. (Taken from mongdb documentation)
     <pre><code>/rest/v1/cities?
 $group-by=state,city&$sum=pop&$sort=pop asc
 &$group-by(1)=state&$last(1) as biggestCity=city&$last(1) as biggestPop=pop-sum

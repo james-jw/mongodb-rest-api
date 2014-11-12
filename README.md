@@ -368,8 +368,8 @@ $max(2)=age-sum</code></pre></td>
     <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
     
     Return largest and smallest cities by state. (Taken from mongdb documentatin)
-    <pre><code>/rest/v1/cities?$group-by=state$group-by=city&sum(pop)=pop&$sort=pop asc&$group-by(1)=state
-&$last(biggestCity, 1)=city&$last(biggestPop, 1)&$first(smallestCity, 1)=city&$first(smallestPop, 1)=pop</pre></code>
+    <pre><code>/rest/v1/cities?$group-by=state&$group-by=city&$sum(pop)=pop&$sort=pop asc&$group-by(1)=state
+&$last(biggestCity,1)=city&$last(biggestPop, 1)&$first(smallestCity, 1)=city&$first(smallestPop, 1)=pop</pre></code>
     
   </p>
 </div>

@@ -47,8 +47,14 @@
     "@type": "{metadata-type}",
     count: {full-result-count},
     list: [ ... {items/groups} ... ],
-    next: "/rest/v1/{collection}?query&$skip=50",
-    previous: "/rest/v1/{collection}?query&$skip=25"
+    next: {
+        url: "/rest/v1/{collection}?query&$skip=50",
+        name: "Next Page"
+    },
+    previous: {
+        url: "/rest/v1/{collection}?query&$skip=25",
+        name: "Previous Page",
+    }
 }</code>
     </pre>
     
@@ -93,8 +99,7 @@
         city: "schema:city#name",
         count: { @type: "xs:integer" },
         next: { 
-            @type: "ViewAction#url",
-            name: "Next Page"
+            @type: "ViewAction#url"
         }
     },
     count: 2089,
@@ -111,7 +116,10 @@
         @id: '/rest/v1/people?state=Arizona&city=Phoenix'
     },
     ... ],
-    next: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25'
+    next: {
+        url: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25',
+        name: 'Next Page',
+    }
 }</code></pre>
     
     <h2>Querying</h2>
@@ -354,7 +362,10 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         count: 23,
         @id: '/rest/v1/people?state=Arizona&city=Tucson'
     } ... ],
-    next: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25'
+    next: {
+        url: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25',
+        name: "Next Page"
+    }
 }</code></pre>
     
     as opposed to:

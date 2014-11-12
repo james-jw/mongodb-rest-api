@@ -81,7 +81,7 @@
     
     <h2>Metadata</h2>
     
-    Metadata is provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.
+    Metadata is referenced and provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.
     
     <h2>Querying</h2>
     <h3>Query parameters</h3>

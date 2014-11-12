@@ -402,7 +402,7 @@ $max:1=age-sum</code></pre></td>
     <pre><code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></pre>
 
     Group by <code>domain</code> and <code>eventName</code> showing all groups having an average <code>paramters.Duration</code> less than 10
-    <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;duration-avg:1&lt;=10</code></pre>
+    <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;Duration-avg:1&lt;=10</code></pre>
     
     Return largest and smallest cities by state. (Taken from mongdb documentation)
     <pre><code>/rest/v1/cities?

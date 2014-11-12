@@ -29,14 +29,23 @@
     
     For example:
     <pre><code>{
-    name: 'John',
-    details: {
-        income: 32465,
-        maritalStatus: 'Single'
+    "@context": {
+        "schema": "http://some-schema.org/",
+        "name": "schema:Person#name",
+        "details": "schema:PersonDetails",
+        "income": "schema:Person#income",
+        "maritalStatus": "schema:Person#maritalStatus",
+        "age": "schema:Person#age",
+        "__v": "schema:version"
+    },
+    "name": "John",
+    "details": {
+        "income": 32465,
+        "maritalStatus": "Single"
     }
-    age: '15',
-    @id: '/rest/v1/people/38923jf8DSD8334j?$version=0',
-    _v: 0 
+    "age": 15,
+    "@id": "/rest/v1/people/38923jf8DSD8334j?$version=0",
+    "__v": 0 
 }</code></pre>
     
     <h2>Pagination</h2>

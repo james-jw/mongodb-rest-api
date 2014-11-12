@@ -282,9 +282,16 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     When a $group-by paramter is provided to the query endpoint above, an aggregation is performed. Multiple group bys are allowed. Additionally functions can reference deep paths via the standard javascript 'dot notation'; <p>
 
+    <h3>Aggregate Alliasing</h3>
+    
     When an aggergate function is used the resulting group field will be named using this logic:
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
+    
+    To circumvent this logic and provide a defined alias simple postfix the aggregation function with the pattern:
+    <pre><code>$agg-function() as {alias}</code></pre>
+    
+    <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:
 
     </p><table>
@@ -314,6 +321,16 @@ $max(2)=age-sum</code></pre></td>
         <td>$sum</td>
         <td>Sums the values of the path provided for each group</td>
         <td><pre><code>$sum=parameters.count</code></pre></td>
+      </tr>
+      <tr>
+        <td>$last({count})</td>
+        <td>Returns the last item(s) in a group. A count can be provided to select a number of items.</td>
+        <td><pre><code>$last=employee</code></pre></td>
+      </tr>
+      <tr>
+        <td>$first({count})</td>
+        <td>Returns the first item(s) in a group. A count can be provided to select a number of items.</td>
+        <td><pre><code>$last=employee</code></pre></td>
       </tr>
     </tbody></table>
     

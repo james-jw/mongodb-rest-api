@@ -293,10 +293,10 @@ $max(2)=age-sum</code></pre></td>
     
     <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={expression}</code></pre> 
     
-    For example: <pre><code>$group-by(1)=sum-Duration</code></pre>
-    Or with function parameters: <pre><code>$having(sum-duration, 1)&gt;=100</code></pre>
+    For example: <pre><code>$group-by(1)=Duration-sum</code></pre>
+    Or with function parameters: <pre><code>$having(Duration-sum, 1)&gt;=100</code></pre>
     
-    Full example: The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> 
+    The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> 
         
     </p><h2>Examples</h2>
 

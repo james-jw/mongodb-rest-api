@@ -5,9 +5,9 @@
     
     The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of mongodb collections. <p />
 
-    Endpoint: <code>{service-path}/rest/v1/{collection-name}</code><br />
+    Endpoint: <code>{service-path}/rest/v1/{collection-name}?{query-parameters}</code><br />
     
-    For example: <code>http://localhost:8080/rest/v1/events</code></p><br />
+    For example: <code>http://localhost:8080/rest/v1/events?eventName=Design_Closed</code></p><br />
     
     All Requests described here should be performed with the standard HTTP verb: <code>GET</code>.
     

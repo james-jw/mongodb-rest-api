@@ -374,7 +374,7 @@ $max:1=age-sum</code></pre></td>
     <pre><code>$group-by=endTimeUtc dayOfWeek</code></pre>
     
     <h3>Predication, Projection, and Grouping pipelines (Proposed)</h3>
-    Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
+    Mongodb allows for pipelines to be defined to perform more sophisticated predication, projection, and grouping. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
     <pre><code>{parameter-name({function-params}?):{pipeline-index? || 0}{operator}?={expression}</code></pre> 
     

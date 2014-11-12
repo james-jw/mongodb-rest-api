@@ -18,16 +18,36 @@
     
     This API does not define an entity schema but instead merely provides a standard mechanism for querying and grouping accross collections of entities of varying types. 
     
+    <h2>Response Format</h2>
+    Objects returned from a query will more or less resemble the document they originate from with a few exceptions:
+    
+    <ol>
+        <li>_id is replaced with a '@id' item to match the JSON-LD specification.</li>
+        <li>Sub-properties will be retained
+    </ol>
+    
+    For example:
+    <pre><code>{
+    name: 'John',
+    details: {
+        income: 32465,
+        maritalStatus: 'Single'
+    }
+    age: '15',
+    @id: '/rest/v1/people/38923jf8DSD8334j?$version=0',
+    _v: 0 
+}</code></pre>
+    
     <h2>Pagination</h2>
     All collection endpoints, whether querying or grouping will return a pageable list. For example:
     
     <pre><code>{
     "@context": "{metadata-base-reference}",
-    "@type": "{metadata-type}"
+    "@type": "{metadata-type}",
     count: {full-result-count},
     list: [ ... {items/groups} ... ],
-    next: "/rest/v1/{collection}?query&$skip=50,
-    previous: "/rest/v1/{collection}?query&$skip=25
+    next: "/rest/v1/{collection}?query&$skip=50",
+    previous: "/rest/v1/{collection}?query&$skip=25"
 }</code>
     </pre>
     
@@ -61,7 +81,7 @@
     
     <h2>Metadata</h2>
     
-    Metadata is provided via the same mechanism as JSON-LD. See git-hub JSON-LD for more details. In particular through the use of the <code>@context</code> and <code>@type</code> response properties. The mechanics around describing entities is outside the scope of this API. 
+    Metadata is provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.
     
     <h2>Querying</h2>
     <h3>Query parameters</h3>

@@ -45,14 +45,20 @@
     <pre><code>{
     "@context": "{metadata-base-reference}",
     count: {full-result-count},
-    list: [ ... {items/groups} ... ],
-    next: {
-        url: "/rest/v1/{collection}?query&$skip=50",
-        name: "Next Page"
+    @graph: [ ... {items/groups} ... ],
+    "next": {
+        "name": "Next Page",
+        "target": [{
+            "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
+         	"contentType": "application/json-ld"       
+        }]
     },
-    previous: {
-        url: "/rest/v1/{collection}?query&$skip=25",
-        name: "Previous Page",
+    "previous": {
+        "name": "Previous Page",
+        "target": [{
+            "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+         	"contentType": "application/json-ld"       
+        }]
     }
 }</code>
     </pre>
@@ -352,33 +358,36 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>$last(5) as lastFiveOrders=orders</code></pre> 
     
     <h3>Response Format</h3>
-    All grouping and querying responses will be returned within a pageable list's <code>list</code> property as described above. When grouping, all groups will have their keys flattened. For example:
+    All grouping and querying responses will be returned within a pageable list's <code>@graph</code> property as described above. When grouping, all groups will have their keys flattened. For example:
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     
     will result in:
     <pre><code>{
-    @context { ... },
-    count: 2089,
-    list: [{
-        state: 'Arizona',
-        city: 'Tucson',
-        count: 23,
-        @id: '/rest/v1/people?state=Arizona&city=Tucson'
+    "@context" { ... },
+    "count": 2089,
+    "@graph": [{
+        "state": 'Arizona',
+        "city": 'Tucson',
+        "count": 23,
+        "@id": '/rest/v1/people?state=Arizona&city=Tucson'
     } ... ],
-    next: {
-        url: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25',
-        name: "Next Page"
-    }
+    "next": {
+    "name": "Next Page",
+    "target": [{
+        "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+     	"contentType": "application/json-ld"       
+    }]
+  }
 }</code></pre>
     
     as opposed to:
-    <pre><code>list: [{
-    _id: {
-        state: 'Arizona',
-        city: 'Tucson'
+    <pre><code>@graph: [{
+    "_id": {
+        "state": 'Arizona',
+        "city": 'Tucson'
     },
-    count: 23,
-    @id: '/rest/v1/people?state=Arizona&city=Tucson'
+    "count": 23,
+    "@id": "/rest/v1/people?state=Arizona&city=Tucson"
 }, ... ]</code></pre>
     
     <h3>Aggregation Functions</h3>

@@ -284,14 +284,16 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 
     <h3>Aggregate Alliasing</h3>
     
-    When an aggergate function is used the resulting group field will be named using this logic:
+    When an aggergate function is used. The resulting group's corresponding field will be named using the following logic:
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     
-    To circumvent this logic and provide a defined alias simple postfix the aggregation function with the pattern:
+    An alias can be defined to circumvent this logic and is provided using the following pattern:
     <pre><code>$agg-function({normal-params}, {alias})</code></pre>
     
-    Alias will always be the last parameter. 
+    Alias will always be the last parameter. For example the following would sum the count field returning its value in the sumOrderCount field:
+    <pre><code>$sum(Count-sum, sumOrderCount)=count</code></pre> 
+    
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

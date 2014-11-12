@@ -386,8 +386,10 @@ $max:1=age-sum</code></pre></td>
     For example: <pre><code>$group-by:1=Duration-sum</code></pre>
     
     Here is what it looks like if a function accepts one or more parameters.
-    <pre><code>$having(Duration-sum):1&gt;=100</code></pre>
     <pre><code>$last(5):1=people</code></pre>
+    
+    Predicating on groups can be accomplished with this technique as well. Its similar to sql's <code>having</code> keyword.
+    <pre><code>$group-by=eventName&$sum=parameters.Duration&Duration-sum:1&gt;=100</code></pre>
     
     The following would group by <code>domain</code>, calculating the <code>avg</code> and <code>sum</code> <code>count</code> during the first pass. On the second pass, the resulting groups will themselves be grouped by the <code>count-avg</code> and for each group the <code>min</code> <code>count-sum</code> will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by:1=count-avg&amp;$min:1=count-sum</code></pre> 
         
@@ -400,7 +402,7 @@ $max:1=age-sum</code></pre></td>
     <pre><code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></pre>
 
     Group by <code>domain</code> and <code>eventName</code> showing all groups having an average <code>paramters.Duration</code> less than 10
-    <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
+    <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;duration-avg:1&lt;=10</code></pre>
     
     Return largest and smallest cities by state. (Taken from mongdb documentation)
     <pre><code>/rest/v1/cities?

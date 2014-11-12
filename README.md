@@ -198,13 +198,13 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
             <td><pre><code>$and(name)~=tony&$and(name)!~=ant</code></pre></td>
         </tr>
         <tr>
-            <td>$or</td>
+            <td>$not</td>
             <td>Returns the boolean value that is the opposite of its argument expression. Accepts a single argument expression.</td>
             <td><pre><code>$not(age)&tl;=20</code></pre>
             </td>
         </tr>
         <tr>
-            <td>$not</td>
+            <td>$or</td>
             <td>Returns true when any of its expressions evaluates to true. Accepts any number of argument expressions.</td>
             <td><pre><code>$and(name, 1)~=tony&$and(name, 1)!~=ant&$or(age, 2)>=20&$or(1, 2)</code></pre></td>
         </tr>

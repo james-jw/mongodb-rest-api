@@ -315,13 +315,28 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     
     will result in:
-    <pre><code>{  
+    <pre><code>{
+    @context: {
+        schema: "http://schema.org",
+        xs: "http//www.xsd.org/2001",
+        state: "schema:state#name",
+        city: "schema:city#name",
+        count: { @type: "xs:integer" },
+        next: { 
+            @type: "ViewAction#url",
+            name: "Next Page"
+        },
+        previous: {
+            @type: "ViewAction#url",
+            name: "Previous Page"
+        }
+    },
     count: 2089,
     list: [{
         state: 'Arizona',
         city: 'Tucson',
         count: 23,
-        self: '/rest/v1/people?state=Arizona&city=Tucson'
+        @id: '/rest/v1/people?state=Arizona&city=Tucson'
     } ... ],
     next: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25'
 }</code></pre>
@@ -333,7 +348,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         city: 'Tucson'
     },
     count: 23,
-    self: '/rest/v1/people?state=Arizona&city=Tucson'
+    @id: '/rest/v1/people?state=Arizona&city=Tucson'
 }, ... ]</code></pre>
     
     <h3>Aggregation Functions</h3>

@@ -7,7 +7,7 @@
     For example: <code>/rest/v1/events</code></p>
     
     <h2>Pagination</h2>
-    All collection endpoints, whether querying or grouping will be returned as a pageable list. For example:
+    All collection endpoints, whether querying or grouping will return a pageable list. For example:
     
     <pre><code>{
     "@context": "{metadata-base-reference}",

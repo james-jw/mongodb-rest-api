@@ -366,12 +366,13 @@ $max(2)=age-sum</code></pre></td>
     <h3>Grouping pipelines (Proposed)</h3>
     Mongodb allows for grouping pipelines to be defined to perform more sophisticated groupings. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
-    <pre><code>{parameter-name({function-params}?, {pipeline-index}? || 0)}{operator}?={expression}</code></pre> 
+    <pre><code>{parameter-name({function-params}?)[{pipeline-index}? || 0]{operator}?={expression}</code></pre> 
     
-    For example: <pre><code>$group-by(1)=Duration-sum</code></pre>
+    For example: <pre><code>$group-by[1]=Duration-sum</code></pre>
     
-    If a function accepts parameters already, the <code>{pipeline-index}</code> will always be last.
-    <pre><code>$having(Duration-sum, 1)&gt;=100</code></pre>
+    If a function accepts one or more parameters, the <code>{pipeline-index}</code> will always be the last parameter.
+    <pre><code>$having(Duration-sum)[1]&gt;=100</code></pre>
+    <pre><code>$last(5)[1]=people</code></pre>
     
     The following would group by domain, calculating the avg and sum count during the first pass. On the second pass, the resulting groups will themselves be grouped by the average count and for each group the min count-sum will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by(1)=count-avg&amp;$min(1)=count-sum</code></pre> 
         
@@ -389,8 +390,8 @@ $max(2)=age-sum</code></pre></td>
     Return largest and smallest cities by state. (Taken from mongdb documentation)
     <pre><code>/rest/v1/cities?
 $group-by=state,city&$sum=pop&$sort=pop asc
-&$group-by(1)=state&$last(1) as biggestCity=city&$last(1) as biggestPop=pop-sum
-&$first(1) as smallestCity=city&$first(1) as smallestPop=pop-sum</pre></code>
+&$group-by[1]=state&$last(biggestCity)[1]=city&$last(biggestPop)[1]=pop-sum
+&$first(smallestCity)[1]=city&$first(smallestPop)[1]=pop-sum</pre></code>
     
   </p>
 </div>

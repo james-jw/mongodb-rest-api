@@ -386,7 +386,7 @@ $max:1=age-sum</code></pre></td>
     Predicating on groups can be accomplished with this technique as well. Its similar to sql's <code>having</code> keyword.
     <pre><code>$group-by=eventName&$sum=parameters.Duration&Duration-sum:1&gt;=100</code></pre>
     
-    Here is another way to write this query explicitly denoting group <code>0</code>
+    Here is another way to write this query explicitly denoting <code>pipeline-index</code> <code>0</code>
     <pre><code>$group-by:0=eventName&$sum:0=parameters.Duration&Duration-sum:1&gt;=100</code></pre>
     
     The following would group by <code>domain</code>, calculating the <code>avg</code> and <code>sum</code> <code>count</code> during the first pass. On the second pass, the resulting groups will themselves be grouped by the <code>count-avg</code> and for each group the <code>min</code> <code>count-sum</code> will be returned.  <pre><code>/rest/v1/events?$group-by=domain&amp;$avg=count&amp;$sum=count&amp;$group-by:1=count-avg&amp;$min:1=count-sum</code></pre> 

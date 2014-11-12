@@ -9,8 +9,8 @@
     For example: <code>/rest/v1/events</code></p>
     
     <h2>Versioning</h2>
-    Currently the api is at version 1. The endpoints URL should include the version number.
-    <code>/rest/{version-number}/{endpoints...}</code>
+    Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.
+    <pre><code>/rest/{version-number}/{endpoints...}</code></pre>
     
     <h2>Pagination</h2>
     All collection endpoints, whether querying or grouping will return a pageable list. For example:
@@ -55,7 +55,7 @@
     
     <h2>Metadata</h2>
     
-    Metadata is provided via the same mechanism as JSON-LD. See git-hub JSON-LD for more details. In particular through the use of the <code>@context</code> and <code>@type</code> response properties. 
+    Metadata is provided via the same mechanism as JSON-LD. See git-hub JSON-LD for more details. In particular through the use of the <code>@context</code> and <code>@type</code> response properties. The mechanics around describing entities is outside the scope of this API. 
     
     <h2>Querying</h2>
     <h3>Query parameters</h3>

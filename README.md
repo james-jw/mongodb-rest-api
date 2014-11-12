@@ -291,7 +291,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     An alias can be defined to circumvent this logic and is provided using the following pattern:
     <pre><code>$agg-function({normal-params}, {alias})</code></pre>
     
-    Alias will always be the last parameter. For example, the following would return the last five orders from the group under the 'lastFiveOrders' property:
+    Alias will always be the last parameter. For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':
     <pre><code>$last(5, lastFiveOrders)=orders</code></pre> 
     
     

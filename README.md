@@ -282,11 +282,11 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>{field-name}-{function-name}</code></pre> For example: <code>$avg=parameters.Duration</code> would become <code>Duration-avg</code> on the resulting groups.
     </p><p>
     
-    An alias can be defined to circumvent this logic and is provided using the following pattern:
-    <pre><code>$agg-function({normal-params}, {alias})</code></pre>
+    An alias can be defined to circumvent this logic and are provided using the following pattern:
+    <pre><code>$agg-function({params}?) as {alias}</code></pre>
     
-    Alias will always be the last parameter. For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':
-    <pre><code>$last(5, lastFiveOrders)=orders</code></pre> 
+    For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':
+    <pre><code>$last(5) as lastFiveOrders=orders</code></pre> 
     
     <h3>Response Format</h3>
     All grouped responses will have their keys flattened. For example:

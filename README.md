@@ -112,12 +112,6 @@
         <td></td>
         <td><pre><code>$group-by=details.class</code></pre></td>
       </tr>
-      <tr>
-        <td>$having({path})</td>
-        <td>Performs predication on an aggregation result set.</td>
-        <td></td>
-        <td><pre><code>$having(sum-count)&gt;=2000</code></pre></td>
-      </tr>
     </tbody></table>
     
     <h4>Expressions</h4>

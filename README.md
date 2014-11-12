@@ -95,10 +95,6 @@
         next: { 
             @type: "ViewAction#url",
             name: "Next Page"
-        },
-        previous: {
-            @type: "ViewAction#url",
-            name: "Previous Page"
         }
     },
     count: 2089,

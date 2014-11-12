@@ -212,11 +212,11 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     </table>
     
     <h4>Boolean grouping</h4>
-    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group zero since they do not reference a group-index.
+    Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note in the following expression <code>$or(name, 1)&$or(0, 1)</code>. Both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group <code>0</code> since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
-            The above query translates to 
-            <pre><code>{$or: 
-    [{ $and: [{ name: { $regex: "tony" }}, { name: { $not: {$regex: "ant" }}} ]},
+            The above query translates to :
+            <pre><code>{$or: [ 
+    { $and: [{ name: { $regex: "tony" }}, { name: { $not: {$regex: "ant" }}} ]},
     { name: "anthony"}
 ]</code></pre> In plain english:
             All documents with a name matching <code>tony</code> but not <code>ant</code>, or having the exact name of      <code>antony</code>. 

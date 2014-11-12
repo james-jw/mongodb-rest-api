@@ -369,7 +369,7 @@ $max(2)=age-sum</code></pre></td>
     
     Return largest and smallest cities by state. (Taken from mongdb documentatin)
     <pre><code>/rest/v1/cities?$group-by=state$group-by=city&sum(pop)=pop&$sort=pop asc&$group-by(1)=state
-&$last(biggestCity, 1)=city&$last(biggestPop, 1)&$first(smallestCity)=city&$first(smallestPop)=pop</pre></code>
+&$last(biggestCity, 1)=city&$last(biggestPop, 1)&$first(smallestCity, 1)=city&$first(smallestPop, 1)=pop</pre></code>
     
   </p>
 </div>

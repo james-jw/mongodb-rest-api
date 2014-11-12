@@ -290,7 +290,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>$last(5) as lastFiveOrders=orders</code></pre> 
     
     <h3>Response Format</h3>
-    All grouped responses will have their keys flattened. For example:
+    All grouping and querying responses will be returned within a pageable list's <code>list</code> property as described above. When grouping, all groups will have their keys flattened. For example:
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     
     will result in:
@@ -302,6 +302,16 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
 } ... ]
     </code></pre>
     
+    as opposed to:
+    <pre><code>
+[{
+    _id: {
+        state: "Arizona",
+        city: "Tucson"
+    }
+    count: 23
+} ... ]
+    </code></pre>
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

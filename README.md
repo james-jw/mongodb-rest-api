@@ -393,13 +393,13 @@ $max:1=age-sum</code></pre></td>
         
     </p><h2>Further Examples</h2>
 
-    Find all events with a domain name equal to ZEPPELIN or NAM and a startTimeUtc within the last week 
+    Find all events with a domain name equal to ZEPPELIN or NAM and a <code>startTimeUtc</code> within the last week 
     <pre><code>/rest/v1/events?domain=ZEPPELIN|NAM&amp;startTimeUtc&gt;=-1w</code></pre>
 
-    Group by domain, showing all groups having more than 2000 events
+    Group by <code>domain</code>, showing all groups <code>having</code> more than 2000 events
     <pre><code>/rest/v1/events?$group-by=domain&amp;$having(count)&gt;=2000</code></pre>
 
-    Group by domain and eventName showing all groups having an average paramters.Duration less than 10
+    Group by <code>domain</code> and <code>eventName</code> showing all groups having an average <code>paramters.Duration</code> less than 10
     <pre><code>/rest/v1/events?$group-by=domain&amp;$group-by=eventName&amp;$avg=parameters.Duration&amp;$having(duration-avg)&lt;=10</code></pre>
     
     Return largest and smallest cities by state. (Taken from mongdb documentation)

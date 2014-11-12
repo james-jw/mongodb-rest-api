@@ -84,6 +84,40 @@
     
     Metadata is referenced and provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.
     
+    Here is an example out from a grouping operation with the @context embedded:
+    <pre><code>{
+    @context: {
+        schema: "http://schema.org",
+        xs: "http//www.xsd.org/2001",
+        state: "schema:state#name",
+        city: "schema:city#name",
+        count: { @type: "xs:integer" },
+        next: { 
+            @type: "ViewAction#url",
+            name: "Next Page"
+        },
+        previous: {
+            @type: "ViewAction#url",
+            name: "Previous Page"
+        }
+    },
+    count: 2089,
+    list: [{
+        state: 'Arizona',
+        city: 'Tucson',
+        count: 23,
+        @id: '/rest/v1/people?state=Arizona&city=Tucson'
+    },
+    {
+        state: 'Arizona',
+        city: 'Phoenix',
+        count: 340,
+        @id: '/rest/v1/people?state=Arizona&city=Phoenix'
+    },
+    ... ],
+    next: '/rest/v1/people?$group-by=state&$group-by=city&$skip=25'
+}</code></pre>
+    
     <h2>Querying</h2>
     <h3>Query parameters</h3>
 
@@ -316,21 +350,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     will result in:
     <pre><code>{
-    @context: {
-        schema: "http://schema.org",
-        xs: "http//www.xsd.org/2001",
-        state: "schema:state#name",
-        city: "schema:city#name",
-        count: { @type: "xs:integer" },
-        next: { 
-            @type: "ViewAction#url",
-            name: "Next Page"
-        },
-        previous: {
-            @type: "ViewAction#url",
-            name: "Previous Page"
-        }
-    },
+    @context { ... },
     count: 2089,
     list: [{
         state: 'Arizona',

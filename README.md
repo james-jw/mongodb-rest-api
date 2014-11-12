@@ -16,7 +16,7 @@
     <pre><code>/rest/{version-number}/{endpoints...}</code></pre>
     <pre><code>/rest/v1/people</code></pre>
     
-    This API does not currently define an entity schema but instead merely provides a standard mechanism for querying and grouping accross collections of entities of varying types. 
+    This API does not define an entity schema but instead merely provides a standard mechanism for querying and grouping accross collections of entities of varying types. 
     
     <h2>Pagination</h2>
     All collection endpoints, whether querying or grouping will return a pageable list. For example:

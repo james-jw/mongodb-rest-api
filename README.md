@@ -98,7 +98,7 @@
         city: "schema:city#name",
         count: { @type: "xs:integer" },
         next: { 
-            @type: "ViewAction#url"
+            @type: "ViewAction"
         }
     },
     count: 2089,

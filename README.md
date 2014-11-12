@@ -7,9 +7,9 @@
 
     Endpoint: <code>{service-path}/rest/v1/{collection-name}</code><br />
     
-    For example: <code>/rest/v1/events</code></p>
+    For example: <code>http://localhost:8080/rest/v1/events</code></p><br />
     
-    Requests described here should all be performed with the standard HTTP verbs <code>GET</code>.
+    All Requests described here should be performed with the standard HTTP verb: <code>GET</code>.
     
     <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.

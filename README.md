@@ -295,22 +295,27 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     
     will result in:
     <pre><code>
-[{
-    state: "Arizona",
-    city: "Tucson",
-    count: 23
-} ... ]
+{  
+    count: 2089,
+    list: [{
+        state: "Arizona",
+        city: "Tucson",
+        count: 23
+    } ... ],
+    next: "/rest/v1/people?$group-by=state&$group-by=city&$skip=25
+}
     </code></pre>
     
     as opposed to:
     <pre><code>
-[{
+... [{
     _id: {
         state: "Arizona",
         city: "Tucson"
-    }
+    },
     count: 23
-} ... ]
+    } ... ] 
+...
     </code></pre>
     
     <h3>Aggregation Functions</h3>

@@ -4,9 +4,31 @@
     Documentation on using the mongodb REST API.<p>
 
     Raw endpoint: <code>/rest/v1/{collection-name}</code><br />
-    For example: <code>/rest/v1/events</code></p><p>
+    For example: <code>/rest/v1/events</code></p>
+    
+    <h2>Pagination</h2>
+    All collection endpoints, whether querying or grouping will be returned as a pageable list. For example:
+    
+    <pre>
+    <code>{
+    "@context": "{metadata-base-reference}",
+    "@type": "{metadata-type}"
+    count: {page-size},
+    list: [ ... {items/groups} ... ],
+    next: "/rest/v1/{collection}?query&$skip=50,
+    previous: "/rest/v1/{collection}?query&$skip=25
+}</code>
+    </pre>
+    
+    
+    @context - references the path to retreive type metadata
+    @type - the type the collection contains
+    count - ull count of results or page size (implementation specific)
+    list - actual results
+    next - link to next page.
+    previous - link to previous page.
 
-    </p><h2>Querying</h2>
+    <h2>Querying</h2>
     <h3>Query parameters</h3>
 
     Query parameters can be provided to manage the output results during querying and grouping operations.<p>

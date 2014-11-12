@@ -9,6 +9,8 @@
     
     For example: <code>/rest/v1/events</code></p>
     
+    Requests described here should all be performed with the standard HTTP verbs <code>GET</code>.
+    
     <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.
     <pre><code>/rest/{version-number}/{endpoints...}</code></pre>

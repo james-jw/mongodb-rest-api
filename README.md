@@ -47,12 +47,12 @@
     <pre><code>{
         "@context": [
             "http://www.w3.org/ns/hydra/core#",
-            "../rest/v1/vocab#"
+            "../rest/v1/vocab#
         ],
         "@type": "hydra:IriTemplate",
         "@id": "../rest/v1/context/event-query-template.jsonld",
         "template": {
-            "template": "../rest/v1/event{?eventName, ... ,userName}{?$skip}{?$limit}",
+            "template": "../rest/v1/event{?eventName, eventName*, eventName!, eventName~, eventName!~}{?$skip}{?$limit}",
             "method": "GET",
             "contentType": "application/ld+json",
             "mappings": [{

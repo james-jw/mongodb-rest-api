@@ -1,15 +1,13 @@
 <div class="container">
-    <h1>mongodb-rest-api v1</h1>
+    <h1>Rest-API v1</h1>
 
     Documentation on a proposed Mongodb compliant REST API for use with generic collections.<p>
     
-    The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of mongodb collections. <p />
+    The api leverages a REST style with query/grouping operations being describable via URLs. Below is a proposed URL mapping to support querying a set of generic collections. <p />
 
     Endpoint: <code>{service-path}/rest/v1/{collection-name}?{query-parameters}</code><br />
     
     For example: <code>http://localhost:8080/rest/v1/events?eventName=Design_Closed</code></p><br />
-    
-    All Requests described here should be performed with the standard HTTP verb: <code>GET</code>.
     
     <h2>Hydra: Hypermedia-Driven API Protocol</h2>
     This api is designed to be in full compliance with the <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> specification. This specification defines a client agnostic way to discover Entry and Action points within the api dynamically allowing for rapid API evolution and development.

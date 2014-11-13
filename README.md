@@ -98,6 +98,7 @@
     For example:
     <pre><code>{
     "@context": "../rest/v1/vocab#",
+    "@id": "/rest/v1/people/38923jf8DSD8334j?$version=0",
     "@type": "User",
     "name": "John",
     "details": {
@@ -105,7 +106,6 @@
         "maritalStatus": "Single"
     }
     "age": 15,
-    "@id": "/rest/v1/people/38923jf8DSD8334j?$version=0",
     "__v": 0 
 }</code></pre>
     

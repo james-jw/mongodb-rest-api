@@ -25,18 +25,18 @@
         "events": {
             "@id": "vocab:EntryPoint/events",
             "@type": "@id",
-            "query": { "@type": "vocab:QueryTemplate" }
+            "query": { "@type": "vocab:EventQueryTemplate" }
         },
         "domains": {
             "@id": "vocab:EntryPoint/domain",
             "@type": "@id",
-            "query": { "@type": "vocab:QueryTemplate" },
+            "query": { "@type": "vocab:DomainQueryTemplate" },
             "create": { "@type": "vocab:CreateDomainTemplate" }
         },
         "users": {
             "@id": "vocab:EntryPoint/users",
             "@type": "@id",
-            "query": { "@type": "vocab:QueryTemplate" }
+            "query": { "@type": "vocab:UserQueryTemplate" }
         }
     }
 }</code></pre>

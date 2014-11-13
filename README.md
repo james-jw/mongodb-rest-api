@@ -383,7 +383,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     For example, the following would return the last five orders from the group with the alias of 'lastFiveOrders':
     <pre><code>$last(5) as lastFiveOrders=orders</code></pre> 
     
-    <h3>Response Format</h3>
+    <h3>Response Projection</h3>
     All grouping and querying responses will be returned within a pageable list's <code>member</code> property as described above. When grouping, all groups will have their keys flattened. For example:
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     

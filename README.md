@@ -48,7 +48,7 @@
         "@type": "hydra:IriTemplate",
         "@id": "../rest/v1/context/event-query-template.jsonld",
         "template": {
-            "template": "../rest/v1/{collection}{?eventName, ... ,userName}{?$group-by}{?$sort}{?$skip}{?$limit}{?$avg,$min,$max,$sum}",
+            "template": "../rest/v1/event{?eventName, ... ,userName}{?$group-by}{?$sort}{?$skip}{?$limit}{?$avg,$min,$max,$sum}",
             "method": "GET",
             "contentType": "application/ld+json",
             "mappings": [{

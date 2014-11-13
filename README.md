@@ -93,34 +93,7 @@
  }</code>
     </pre>
     
-    Property descriptions:
-    <table>
-        <tr>
-            <td>@context</td>
-            <td>The metadata context or base path of the page.</td>
-        </tr>
-        <tr>
-            <td>@type</td>
-            <td>The type of results returned.</td>
-        </tr>
-        <tr>
-            <td>count</td>
-            <td>Full count of results</td>
-        </tr>
-        <tr>
-            <td>list</td>
-            <td>Actual list of results</td>
-        </tr>
-        <tr>
-            <td>next</td>
-            <td>Link to next page of results.</td>
-        </tr>
-        <tr>
-            <td>previous</td>
-            <td>Link to previous page of results.</td>
-        </tr>
-    </table>
-    
+    See hydras PagedCollection and Example 14 for more details: <a href="http://www.hydra-cg.com/spec/latest/core/#hydra:PagedCollection">Hydra Specification</a>
     <h2>Metadata</h2>
     
     Metadata is referenced and provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.

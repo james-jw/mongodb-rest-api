@@ -69,14 +69,14 @@
         "name": "Next Page",
         "target": [{
             "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
-         	"contentType": "application/json-ld"       
+         	"contentType": "application/ld+json"       
         }]
     },
     "previous": {
         "name": "Previous Page",
         "target": [{
             "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-         	"contentType": "application/json-ld"       
+         	"contentType": "application/ld+json"       
         }]
     }
 }</code>
@@ -145,7 +145,7 @@
     "name": "Next Page",
     "target": [{
         "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-     	"contentType": "application/json-ld"       
+     	"contentType": "application/ld+json"       
     }]
   }
  }</code></pre>
@@ -394,7 +394,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     "name": "Next Page",
     "target": [{
         "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-     	"contentType": "application/json-ld"       
+     	"contentType": "application/ld+json"       
     }]
   }
 }</code></pre>

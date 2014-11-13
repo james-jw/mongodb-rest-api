@@ -30,12 +30,12 @@
     For example:
     <pre><code>{
     "@context": {
-        "schema": "http://some-schema.org/",
-        "name": "schema:Person#name",
-        "income": "schema:Person#income",
-        "maritalStatus": "schema:Person#maritalStatus",
-        "age": "schema:Person#age",
-        "__v": "schema:version"
+        "vocab": "http://some-schema.org/",
+        "name": "vocab:Person#name",
+        "income": "vocab:Person#income",
+        "maritalStatus": "vocab:Person#maritalStatus",
+        "age": "vocab:Person#age",
+        "__v": "vocab:version"
     },
     "name": "John",
     "details": {
@@ -51,35 +51,27 @@
     All collection endpoints, whether querying or grouping will return a pageable list. For example:
     
     <pre><code>{
-    "@context": "{metadata-base-reference}",
-    "count": {full-result-count},
-    "@graph": [{
-        "state": "Arizona",
-        "city": "Tucson",
-        "count": 23,
-        "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-    },
-    {
-        "state": "Arizona",
-        "city": "Phoenix",
-        "count": 340,
-        "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-    } ... ],
-    "next": {
-        "name": "Next Page",
-        "target": [{
-            "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
-         	"contentType": "application/ld+json"       
-        }]
-    },
-    "previous": {
-        "name": "Previous Page",
-        "target": [{
-            "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-         	"contentType": "application/ld+json"       
-        }]
-    }
-}</code>
+  "@context": [ ... ],
+  "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+  "@type": "PagedCollection",
+  "totalItems": 2089,
+  "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
+  "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
+  "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
+  "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
+  "member": [{
+      "state": "Arizona",
+      "city": "Tucson",
+      "count": 23,
+      "@id": "/rest/v1/people?state=Arizona&city=Tucson"
+  },
+  {
+      "state": "Arizona",
+      "city": "Phoenix",
+      "count": 340,
+      "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
+  } ... ]
+ }</code>
     </pre>
     
     Property descriptions:
@@ -116,20 +108,23 @@
     
     Here is an example out from a grouping operation with the @context embedded:
     <pre><code>{
-  "@context": {
-    "schema": "http://schema.org/",
-    "state": "schema:State#name",
-    "city": "schema:City#name",
-    "count": "schema:Quantity",
-    "next": "schema:PotentialAction",
-    "name": "schema:PotentialAction#name",
-    "target": "schema:EntryPoint",
-    "urlTemplate": "schema:EntryPoint#urlTemplate",
-    "contentType": "schema:EntryPoint#contentType"
-  },
-  "count": 2089,
-  "@id": "/rest/v1/people?$group-by=state&$group-by=city",
-  "@graph": [{
+  "@context": [
+    "http://www.w3.org/ns/hydra/context.jsonld",
+    {
+      "vocab": "../rest/v1/vocab#",
+      "state": "vocab:State#name",
+      "city": "vocab:City#name",
+      "count": "vocab:Count"
+    }
+  ],
+  "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+  "@type": "PagedCollection",
+  "totalItems": 2089,
+  "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
+  "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
+  "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
+  "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
+  "member": [{
       "state": "Arizona",
       "city": "Tucson",
       "count": 23,
@@ -140,14 +135,7 @@
       "city": "Phoenix",
       "count": 340,
       "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-  } ... ],
-  "next": {
-    "name": "Next Page",
-    "target": [{
-        "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-     	"contentType": "application/ld+json"       
-    }]
-  }
+  } ... ]
  }</code></pre>
     
     <h2>Querying</h2>
@@ -377,30 +365,27 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     <pre><code>$last(5) as lastFiveOrders=orders</code></pre> 
     
     <h3>Response Format</h3>
-    All grouping and querying responses will be returned within a pageable list's <code>@graph</code> property as described above. When grouping, all groups will have their keys flattened. For example:
+    All grouping and querying responses will be returned within a pageable list's <code>member</code> property as described above. When grouping, all groups will have their keys flattened. For example:
     <pre><code>/rest/v1/people?$group-by=state&$group-by=city</code></pre>
     
     will result in:
     <pre><code>{
-    "@context" { ... },
-    "count": 2089,
-    "@graph": [{
+    "@context" [ ... ],
+     ...
+    "member": [{
         "state": 'Arizona',
         "city": 'Tucson',
         "count": 23,
         "@id": '/rest/v1/people?state=Arizona&city=Tucson'
-    } ... ],
-    "next": {
-    "name": "Next Page",
-    "target": [{
-        "urlTemplate": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-     	"contentType": "application/ld+json"       
-    }]
+    } ... ]
   }
 }</code></pre>
     
     as opposed to:
-    <pre><code>@graph: [{
+    <pre><code>{
+    "@context": [ ... ],
+      ...
+    "member": [{
     "_id": {
         "state": 'Arizona',
         "city": 'Tucson'

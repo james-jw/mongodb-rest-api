@@ -55,14 +55,7 @@
     
     For example:
     <pre><code>{
-    "@context": {
-        "vocab": "http://some-schema.org/",
-        "name": "vocab:Person#name",
-        "income": "vocab:Person#income",
-        "maritalStatus": "vocab:Person#maritalStatus",
-        "age": "vocab:Person#age",
-        "__v": "vocab:version"
-    },
+    "@context": "../rest/v1/context/User.jsonld",
     "name": "John",
     "details": {
         "income": 32465,

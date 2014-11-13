@@ -41,6 +41,41 @@
     }
 }</code></pre>
     
+    Operation discover and entry point interaction may require information which only the client contains. For this reason Hydra allows for the definnition of query templates using the <a href="http://www.hydra-cg.com/spec/latest/core/#bib-RFC6570">RFC6570 Specification</a>. Please see the specification for details. Here is an example of the vocab:QueryTemplate defined above in <code>ld+json</code>:
+    
+    <pre><code>{
+        "@type": "hydra:IriTemplate",
+        "@id": "../rest/v1/context/event-query-template.jsonld",
+        "template": {
+            "template": "../rest/v1/{collection}{?eventName, ... ,userName}{?$group-by}{?$sort}{?$skip}{?$limit}{?$avg,$min,$max,$sum}",
+            "method": "GET",
+            "contentType": "application/ld+json",
+            "mappings": [{
+                "@type": "IriTemplateMapping",
+                "variable": "eventName",
+                "property": "vocab:Event#name"
+            }, 
+              ...
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "userName",
+                "property": "vocab:Event#userName"
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "$skip",
+                "property": "vocab:QueryTemplate#$skip",
+                "required": "false"
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "$limit",
+                "property": "vocab:QueryTemplate#$limit",
+                "required": "false"
+            }]
+        }
+    }</code></pre>
+    
     <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.
     <pre><code>/rest/{version-number}/{endpoints...}</code></pre>

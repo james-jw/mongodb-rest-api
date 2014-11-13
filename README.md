@@ -14,7 +14,30 @@
     <h2>Hydra: Hypermedia-Driven API Protocol</h2>
     This api is designed to be in full compliance with the <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> specification. This specification defines a client agnostic way to discover Entry and Action points within the api dynamically allowing for rapid API evolution and development.
     
+    <h2>Discovery</h2>
+    The mechanis for API entry point discovery is also handled by the Hydra Specification. 
     See <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> for more details.
+    
+    Here is an example of a simple EntryPoint ld+json response:
+    <pre><code>{
+    "@context": {
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "vocab": "../rest/v1/vocab#",
+        "EntryPoint": "vocab:EntryPoint",
+        "events": {
+            "@id": "vocab:EntryPoint/events",
+            "@type": "@id"
+        },
+        "domains": {
+            "@id": "vocab:EntryPoint/domain",
+            "@type": "@id"
+        },
+        "users": {
+            "@id": "vocab:EntryPoint/users",
+            "@type": "@id"
+        }
+    }
+}</code></pre>
     
     <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.

@@ -24,15 +24,19 @@
         "EntryPoint": "vocab:EntryPoint",
         "events": {
             "@id": "vocab:EntryPoint/events",
-            "@type": "@id"
+            "@type": "@id",
+            "query": { "@type": "vocab:QueryTemplate" }
         },
         "domains": {
             "@id": "vocab:EntryPoint/domain",
-            "@type": "@id"
+            "@type": "@id",
+            "query": { "@type": "vocab:QueryTemplate" },
+            "create": { "@type": "vocab:CreateDomainTemplate" }
         },
         "users": {
             "@id": "vocab:EntryPoint/users",
-            "@type": "@id"
+            "@type": "@id",
+            "query": { "@type": "vocab:QueryTemplate" }
         }
     }
 }</code></pre>

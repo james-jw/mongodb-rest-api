@@ -21,8 +21,6 @@
     <pre><code>/rest/{version-number}/{endpoints...}</code></pre>
     <pre><code>/rest/v1/people</code></pre>
     
-    This API does not define an entity schema but instead merely provides a standard mechanism for querying and grouping accross collections of entities of varying types. 
-    
     <h2>Response Format</h2>
     Objects returned from a query will more or less resemble the document they originate from with a few exceptions:
     

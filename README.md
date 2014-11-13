@@ -11,6 +11,11 @@
     
     All Requests described here should be performed with the standard HTTP verb: <code>GET</code>.
     
+    <h2>Hydra: Hypermedia-Driven API Protocol</h2>
+    This api is designed to be in full compliance with the <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> specification. This specification defines a client agnostic way to discover Entry and Action points within the api dynamically allowing for rapid API evolution and development.
+    
+    See <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> for more details.
+    
     <h2>Versioning</h2>
     Currently the api is at version 1. The endpoints URL should include the version number in order to allow for multiple versions of the API.
     <pre><code>/rest/{version-number}/{endpoints...}</code></pre>

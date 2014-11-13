@@ -97,7 +97,8 @@
     
     For example:
     <pre><code>{
-    "@context": "../rest/v1/context/User.jsonld",
+    "@context": "../rest/v1/vocab#",
+    "@type": "User",
     "name": "John",
     "details": {
         "income": 32465,

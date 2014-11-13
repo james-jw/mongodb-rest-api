@@ -16,7 +16,7 @@
     
     <h2>Discovery</h2>
     The mechanis for API entry point discovery is also handled by the Hydra Specification. 
-    See <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> for more details.
+    See <a href="http://www.hydra-cg.com/spec/latest/core/#discovering-a-hydra-powered-web-api">Discovering Hydra API Entry Points</a> for more details. 
     
     Here is an example of a simple EntryPoint ld+json response:
     <pre><code>{

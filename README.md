@@ -8,7 +8,7 @@
     Endpoint: <code>{service-path}/rest/v1/{collection-name}?{query-parameters}</code><br />
     
     For example: <code>http://localhost:8080/rest/v1/events?eventName=Design_Closed</code></p><br />
-    
+
     <h2>Hydra: Hypermedia-Driven API Protocol</h2>
     This api is designed to be in full compliance with the <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> specification. This specification defines a client agnostic way to discover Entry and Action points within the api dynamically allowing for rapid API evolution and development.
     
@@ -42,7 +42,7 @@
 }</code></pre>
     
     <h3>IRI Templates</h3>
-    Operation discover and entry point interaction may require information which only the client contains. For this reason Hydra allows for the definnition of query templates using the <a href="http://www.hydra-cg.com/spec/latest/core/#bib-RFC6570">RFC6570 Specification</a>. Please see the specification for details. Here is an example of the vocab:QueryTemplate defined above in <code>ld+json</code>:
+    Operation discover and entry point interaction may require information which only the client contains. For this reason Hydra allows for the definnition of query templates using the <a href="http://www.hydra-cg.com/spec/latest/core/#bib-RFC6570">RFC6570 Specification</a>. Please see the specification for details. Here is an example of the vocab:QueryTemplate referenced above in <code>ld+json</code>:
     
     <pre><code>{
         "@type": "hydra:IriTemplate",

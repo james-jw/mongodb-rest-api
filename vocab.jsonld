@@ -2,6 +2,7 @@
   "@context": {
     "vocab": "../rest/v1/vocab#",
     "hydra": "http://www.w3.org/ns/hydra/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "ApiDocumentation": "hydra:ApiDocumentation",
     "property": {
       "@id": "hydra:property",
@@ -61,7 +62,7 @@
       "supportedProperty": [
         {
           "property": "hydra:member",
-          "hydra:title": "members",
+          "hydra:title": "Members",
           "hydra:description": "The members of this collection.",
           "required": null,
           "readonly": false,
@@ -70,14 +71,90 @@
         {
           "property": "hydra:nextPage",
           "hydra:title": "Next page.",
-          "hydra:description": "Request the next page of results.",
+          "hydra:description": "Next page of results.",
           "readonly": true
         },
         {
           "property": "hydra:previousPage",
           "hydra:title": "Previous page.",
-          "hydra:description": "Request the previous page of results.",
+          "hydra:description": "Previous page of results.",
+          "readonly": true
+        }
+      ]
+    },
+    {
+      "@id": "vocab:MetricEvent",
+      "@type": "hyrda:Class",
+      "hydra:title": "Event",
+      "hydra:description": "An application metrics event.",
+      "supportedOperation": [],
+      "supportedProperty": [
+        {
+          "property": {
+            "@id": "vocab:MetricEvent/eventName",
+            "label": "eventName",
+            "domain": "hydra:event",
+            "range": "xsd:string"
+          },
+          "hydra:title": "Event Name",
+          "hydra:description": "The name of the event.",
+          "readonly": true
+        },
+        {
+          "property": {
+            "@id": "vocab:MetricEvent/domainName",
+            "label": "domain",
+            "domain": "hydra:event",
+            "range": "xsd:string"
+          },
+          "hydra:title": "Domain Name",
+          "hydra:description": "The name of the domain.",
+          "readonly": true
+        },
+        {
+          "property": {
+            "@id": "vocab:MetricEvent/machineName",
+            "label": "machine",
+            "domain": "hydra:event",
+            "range": "xsd:string"
+          },
+          "hydra:title": "Machine Name",
+          "hydra:description": "The name of the machine.",
+          "readonly": true
+        },
+        {
+          "property": {
+            "@id": "vocab:MetricEvent/userName",
+            "label": "userName",
+            "domain": "hydra:event",
+            "range": "xsd:string"
+          },
+          "hydra:title": "User Name",
+          "hydra:description": "The name of the user.",
+          "readonly": true
+        },
+        {
+          "property": {
+            "@id": "hydra:MetricEvent/startTimeUtc",
+            "label": "startTimeUtc",
+            "domain": "hydra:event",
+            "range": "xsd:datetime"
+          },
+          "hydra:title": "Start time",
+          "hydra:description": "The date and time when the event was logged.",
+          "readonly": true
+        },
+        {
+          "property": {
+            "@id": "hydra:MetricEvent/endTimeUtc",
+            "label": "endTimeUtc",
+            "domain": "hydra:event",
+            "range": "xsd:datetime"
+          },
+          "hydra:title": "End time",
+          "hydra:description": "The date and time the event ended.",
           "readonly": true
         }
       ]
     }
+}

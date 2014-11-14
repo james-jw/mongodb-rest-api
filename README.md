@@ -18,27 +18,11 @@
     
     Here is an example of a simple EntryPoint ld+json response:
     <pre><code>{
-    "@context": {
-        "hydra": "http://www.w3.org/ns/hydra/core#",
-        "vocab": "../rest/v1/vocab#",
-        "EntryPoint": "vocab:EntryPoint",
-        "events": {
-            "@id": "vocab:EntryPoint/events",
-            "@type": "@id",
-            "query": { "@type": "vocab:EventQueryTemplate" }
-        },
-        "domains": {
-            "@id": "vocab:EntryPoint/domain",
-            "@type": "@id",
-            "query": { "@type": "vocab:DomainQueryTemplate" },
-            "create": { "@type": "vocab:CreateDomainTemplate" }
-        },
-        "users": {
-            "@id": "vocab:EntryPoint/users",
-            "@type": "@id",
-            "query": { "@type": "vocab:UserQueryTemplate" }
-        }
-    }
+  "@context": "../rest/v1/vocab#",
+  "@id": "../rest/v1/",
+  "@type": "EntryPoint",
+  "issues": "../rest/v1/events/",
+  "users": "../rest/v1/users/"
 }</code></pre>
     
     <h3>IRI Templates</h3>

@@ -391,7 +391,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         "city": 'Tucson',
         "count": 23,
         "@id": '/rest/v1/people?state=Arizona&city=Tucson'
-    } ... ]
+    }, ... ]
   }
 }</code></pre>
     

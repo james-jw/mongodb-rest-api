@@ -31,7 +31,7 @@
     <pre><code>{
     "@context": [
         "http://www.w3.org/ns/hydra/core#",
-        "../rest/v1/vocab#
+        { "vocab": "../rest/v1/vocab#" }
     ],
     "@type": "hydra:IriTemplate",
     "@id": "../rest/v1/context/event-query-template.jsonld",

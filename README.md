@@ -122,14 +122,14 @@
     
     Here is an example out from a grouping operation with the @context embedded:
     <pre><code>{
-  "@context": [
-    "http://www.w3.org/ns/hydra/context.jsonld",
-    {
-      "vocab": "../rest/v1/vocab#",
-      "state": "vocab:State#name",
-      "city": "vocab:City#name",
-      "count": "vocab:Count"
-    }
+    "@context": [
+        "http://www.w3.org/ns/hydra/context.jsonld",
+        {
+            "vocab": "../rest/v1/vocab#",
+            "state": "vocab:State#name",
+            "city": "vocab:City#name",
+            "count": "vocab:Count"
+        }
     ],
     "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
     "@type": "PagedCollection",

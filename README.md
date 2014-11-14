@@ -461,6 +461,11 @@ $max:1=age-sum</code></pre></td>
         <td>Returns the first item(s) in a group. A count can be provided to select a number of items.</td>
         <td><pre><code>$first(5)=employee</code></pre></td>
       </tr>
+      <tr>
+        <td>$distinct</td>
+        <td>Returns an array of all distinct values in the group at the path provided.</td>
+        <td><pre><code>$distinct=machineName</code></pre></td>
+      </tr>
     </tbody></table>
     
     All aggregative functions can operate on multiple fields. You can either supply the parameter multiple times or seperate a single aggregate functions param values with a <code>,</code>. For example, the following would sum both the orders and returns fields:

@@ -269,6 +269,11 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <td>Equates that the property is less than or equal to the supplied value or expression.</td>
         <td><pre><code>birthdate&lt;=2012-10-12</code></pre></td>
       </tr>
+      <tr>
+        <td>%({divisor})=</td>
+        <td>Equates that a property, when divided by the divisor, has a remainder equal to the supplied value.</td>
+        <td><pre><code>age%(10)=0</code></pre></td>
+      </tr>
     </tbody></table>
     
     All operators with the exception of the <code>&lt;= and >=</code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the <code>|</code> character.

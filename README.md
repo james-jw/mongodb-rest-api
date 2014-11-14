@@ -36,7 +36,7 @@
     "@type": "hydra:IriTemplate",
     "@id": "../rest/v1/context/event-query-template.jsonld",
     "template": {
-        "template": "../rest/v1/event{?query}{?$skip}{?$limit}",
+        "template": "../rest/v1/event{?query*}{?sort*}{?skip}{?limit}",
         "method": "GET",
         "contentType": "application/ld+json",
         "mappings": [{
@@ -47,13 +47,19 @@
         }, 
         {
             "@type": "IriTemplateMapping",
-            "variable": "$skip",
+            "variable": "sort",
+            "property": "vocab:$sort",
+            "required": "false"
+        },
+        {
+            "@type": "IriTemplateMapping",
+            "variable": "skip",
             "property": "vocab:$skip",
             "required": "false"
         },
         {
             "@type": "IriTemplateMapping",
-            "variable": "$limit",
+            "variable": "limit",
             "property": "vocab:$limit",
             "required": "false"
         }]

@@ -166,5 +166,49 @@
           "readonly": true
         }
       ]
+    },
+    {
+      "@id": "vocab:EntryPoint",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "EntryPoint",
+      "description": "Application metrics entry point",
+      "supportedOperation": [
+        {
+          "@id": "_:entry_point",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "The APIs main entry point.",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:EntryPoint",
+          "statusCodes": []
+        }
+      ],
+      "supportedProperty": [
+        {
+          "property": {
+            "@id": "vocab:EntryPoint/events",
+            "@type": "hydra:Link",
+            "label": "issues",
+            "description": "The collection of all events",
+            "domain": "vocab:EntryPoint",
+            "range": "hydra:PagedCollection",
+            "supportedOperation": [
+              {
+                "@id": "_:retrieve_events",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "events",
+                "expects": null,
+                "returns": "hydra:PagedCollection"
+              }]
+           }
+           "hydra:title": "Events",
+           "hydra:description": "Pageable list of metric events.",
+           "readonly": true
+        }
+      ]
     }
+  ]
 }

@@ -18,11 +18,11 @@
     
     Here is an example of a simple EntryPoint ld+json response:
     <pre><code>{
-  "@context": "../rest/v1/vocab#",
-  "@id": "../rest/v1/",
-  "@type": "EntryPoint",
-  "issues": "../rest/v1/events/",
-  "users": "../rest/v1/users/"
+    "@context": "../rest/v1/vocab#",
+    "@id": "../rest/v1/",
+    "@type": "EntryPoint",
+    "issues": "../rest/v1/events/",
+    "users": "../rest/v1/users/"
 }</code></pre>
     
     <h3>IRI Templates</h3>
@@ -92,27 +92,27 @@
     All collection endpoints, whether querying or grouping will return a pageable list. For example:
     
     <pre><code>{
-  "@context": [ ... ],
-  "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-  "@type": "PagedCollection",
-  "totalItems": 2089,
-  "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
-  "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
-  "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
-  "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
-  "member": [{
+    "@context": [ ... ],
+    "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+    "@type": "PagedCollection",
+    "totalItems": 2089,
+    "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
+    "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
+    "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
+    "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
+    "member": [{
       "state": "Arizona",
       "city": "Tucson",
       "count": 23,
       "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-  },
-  {
+    },
+    {
       "state": "Arizona",
       "city": "Phoenix",
       "count": 340,
       "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-  } ... ]
- }</code>
+    } ... ]
+}</code>
     </pre>
     
     See hydras PagedCollection and Example 14 for more details: <a href="http://www.hydra-cg.com/spec/latest/core/#hydra:PagedCollection">Hydra Specification</a>
@@ -130,27 +130,27 @@
       "city": "vocab:City#name",
       "count": "vocab:Count"
     }
-  ],
-  "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
-  "@type": "PagedCollection",
-  "totalItems": 2089,
-  "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
-  "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
-  "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
-  "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
-  "member": [{
+    ],
+    "@id": "/rest/v1/people?$group-by=state&$group-by=city&$skip=25",
+    "@type": "PagedCollection",
+    "totalItems": 2089,
+    "firstPage": "/rest/v1/people?$group-by=state&$group-by=city",
+    "nextPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=50",
+    "previousPage": "/rest/v1/people?$group-by=state&$group-by=city",
+    "lastPage": "/rest/v1/people?$group-by=state&$group-by=city&$skip=2075",
+    "member": [{
       "state": "Arizona",
       "city": "Tucson",
       "count": 23,
       "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-  },
-  {
+    },
+    {
       "state": "Arizona",
       "city": "Phoenix",
       "count": 340,
       "@id": "/rest/v1/people?state=Arizona&city=Phoenix"
-  } ... ]
- }</code></pre>
+    } ... ]
+}</code></pre>
     
     <h2>Querying</h2>
     <h3>Query parameters</h3>

@@ -400,13 +400,14 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     "@context": [ ... ],
       ...
     "member": [{
-    "_id": {
-        "state": 'Arizona',
-        "city": 'Tucson'
-    },
-    "count": 23,
-    "@id": "/rest/v1/people?state=Arizona&city=Tucson"
-}, ... ]</code></pre>
+        "_id": {
+            "state": 'Arizona',
+            "city": 'Tucson'
+        },
+        "count": 23,
+        "@id": "/rest/v1/people?state=Arizona&city=Tucson"
+    }, ... ]
+}</code></pre>
     
     <h3>Aggregation Functions</h3>
     Below is a list of functions which can be performed on the groups:

@@ -87,7 +87,17 @@
       "@type": "hyrda:Class",
       "hydra:title": "Event",
       "hydra:description": "An application metrics event.",
-      "supportedOperation": [],
+      "supportedOperation": [
+        {
+          "@id": "_:metricEvent_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieve.",
+          "description": "Retrieves the event details.",
+          "expects": null,
+          "returns": "vocab:MetricEvent"
+        }
+      ],
       "supportedProperty": [
         {
           "property": {

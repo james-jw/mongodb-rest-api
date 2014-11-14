@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "vocab": "../rest/v1/vocab#",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "ApiDocumentation": "hydra:ApiDocumentation",
+    "property": {
+      "@id": "hydra:property",
+      "@type": "@id"
+    },
+    "readonly": "hydra:readonly",
+    "writeonly": "hydra:writeonly",
+    "supportedClass": "hydra:supportedClass",
+    "supportedProperty": "hydra:supportedProperty",
+    "supportedOperation": "hydra:supportedOperation",
+    "method": "hydra:method",
+    "expects": {
+      "@id": "hydra:expects",
+      "@type": "@id"
+    },
+    "returns": {
+      "@id": "hydra:returns",
+      "@type": "@id"
+    },
+    "statusCodes": "hydra:statusCodes",
+    "code": "hydra:statusCode",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "label": "rdfs:label",
+    "description": "rdfs:comment",
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    }
+  },
+  "@id": "../rest/v1/vocab",
+  "@type": "ApiDocumentation",
+  "title": "Application metrics API",
+  "description": "REST API for accessing application metric data.",
+  "entrypoint": "../rest/v1",
+  "supportedClass": [
+    {
+      "@id": "hydra:Resource",
+      "@type": "hydra:Class",
+      "hydra:title": "Resource",
+      "hydra:description": null
+    },
+    {
+      "@id": "hydra:PagedCollection",
+      "@type": "hydra:Class",
+      "hydra:title": "Paged Collection",
+      "hydra:description": "A pageable collection of items.",
+      "supportedOperation": [],
+      "supportedProperty": [
+        {
+          "property": "hydra:member",
+          "hydra:title": "members",
+          "hydra:description": "The members of this collection.",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": "hydra:nextPage",
+          "hydra:title": "Next page.",
+          "hydra:description": "Request the next page of results.",
+          "readonly": true
+        },
+        {
+          "property": "hydra:previousPage",
+          "hydra:title": "Previous page.",
+          "hydra:description": "Request the previous page of results.",
+          "readonly": true
+        }
+      ]
+    }

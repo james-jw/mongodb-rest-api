@@ -484,12 +484,13 @@ $max:1=age-sum</code></pre></td>
         <li>dayOfYear</li>
         <li>dayOfMonth</li>
         <li>dayOfWeek</li>
-        <li>monthOfYear</li>
-        <li>weekOfYear</li>
-        <li>hourOfDay</li>
-        <li>minuteOfHour</li>
-        <li>secondOfMinute</li>
-        <li>millisecondOfSecond</li>
+        <li>year</li>
+        <li>month</li>
+        <li>week</li>
+        <li>hour</li>
+        <li>minute</li>
+        <li>second</li>
+        <li>millisecond</li>
     </ul>
     
     For example, to group by the day of the week (monday, tuesday ...) you could use:

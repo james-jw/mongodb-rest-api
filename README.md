@@ -13,7 +13,7 @@
     This api is designed to be in full compliance with the <a href="http://www.w3.org/ns/hydra/">Hydra Hypermedia Driven API</a> specification. This specification defines a client agnostic way to discover Entry and Action points within the api dynamically allowing for rapid API evolution and development.
     
     <h2>Discovery</h2>
-    The mechanis for API entry point discovery is also handled by the Hydra Specification. 
+    The mechanics of API entry point discovery is also handled by the Hydra Specification. 
     See <a href="http://www.hydra-cg.com/spec/latest/core/#discovering-a-hydra-powered-web-api">Discovering Hydra API Entry Points</a> for more details. 
     
     Here is an example of a simple EntryPoint ld+json response:

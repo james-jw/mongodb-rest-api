@@ -26,7 +26,7 @@
 }</code></pre>
     
     <h3>IRI Templates</h3>
-    Operation discover and entry point interaction may require information which only the client contains. For this reason Hydra allows for the definnition of query templates using the <a href="http://www.hydra-cg.com/spec/latest/core/#bib-RFC6570">RFC6570 Specification</a>. Please see the specification for details. Here is an example of the vocab:QueryTemplate referenced above in <code>ld+json</code>:
+    Operation discover and entry point interaction may require information which only the client contains. For this reason Hydra allows for the definnition of query templates using the <a href="http://www.hydra-cg.com/spec/latest/core/#bib-RFC6570">RFC6570 Specification</a>. Please see the specification for details. Here is an example of an IriTemplate propery.<code>ld+json</code>:
     
     <pre><code>{
     "@context": [

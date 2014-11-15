@@ -45,20 +45,17 @@
     {
         "@type": "IriTemplateMapping",
         "variable": "sort",
-        "property": "vocab:$sort",
-        "required": "false"
+        "property": "vocab:$sort"
     },
     {
         "@type": "IriTemplateMapping",
         "variable": "skip",
-        "property": "vocab:$skip",
-        "required": "false"
+        "property": "vocab:$skip"
     },
     {
         "@type": "IriTemplateMapping",
         "variable": "limit",
-        "property": "vocab:$limit",
-        "required": "false"
+        "property": "vocab:$limit"
     }],
     supportOperation: [{
       "@id": "_:event-query",

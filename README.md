@@ -126,7 +126,7 @@
     
     Metadata is referenced and provided via the same mechanism as JSON-LD. See the <a href="http://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">JSON-LD Specification</a> for more details on how meta information is handled via the @context, @type and other keywords.
     
-    Here is an example out from a grouping operation with the @context embedded:
+    Here is an example output from a grouping operation with the @context embedded:
     <pre><code>{
     "@context": [
         "http://www.w3.org/ns/hydra/context.jsonld",

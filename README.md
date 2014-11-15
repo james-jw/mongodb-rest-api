@@ -237,29 +237,12 @@
         <td><pre><code>name*=son</code></pre></td>
       </tr>
       <tr>
-        <td>!*=</td>
-        <td>Equates that the property does not contain the supplied text.</td>
-        <td><pre><code>name!*=son</code></pre></td>
-      </tr>
-      <tr>
         <td>~=</td>
         <td>Equates that the property matches one or more of the supplied regular expressions.</td>
         <td>
            <pre><code>name~=jef.*son
 eventName~=Designer.*Count|Session.*Count</code></pre>
         </td>
-      </tr>
-      <tr>
-        <td>!~=</td>
-        <td>Equates that the property does not match any of the supplied regular expressions.</td>
-        <td>
-           <pre><code>name!~=jef.*son</code></pre>
-        </td>
-      </tr>
-      <tr>
-        <td>!=</td>
-        <td>Equates that the property does not equal one of the provided values.</td>
-        <td><pre><code>lastName!=Smith|Doe</code></pre></td>
       </tr>
       <tr>
         <td>&gt;=</td>
@@ -281,6 +264,38 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
     All operators with the exception of the <code>&lt;= and >=</code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the <code>|</code> character.
     
     <h3>Boolean Operators</h3>
+    
+    <h4>Not Operations</h4>
+    
+    Any of the above query operators can be prefixed with the <code>!</code> character resulting in a logical not being applied to the result. For example:
+    
+    <table>
+      <thead>
+        <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>!=</td>
+        <td>Equates that the property does not equal one of the provided values.</td>
+        <td><pre><code>lastName!=Smith|Doe</code></pre></td>
+      </tr>
+      <tr>
+        <td>!~=</td>
+        <td>Equates that the property does not match any of the supplied regular expressions.</td>
+        <td>
+           <pre><code>name!~=jef.*son</code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>!*=</td>
+        <td>Equates that the property does not contain the supplied text.</td>
+        <td><pre><code>name!*=son</code></pre></td>
+      </tr>
+    </tbody></table>
     
     Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. A <code>{path || group-reference}</code> and an optional <code>{group-index}</code> parameter. If no <code>group-index</code> is provided, the operation is assumed to be against group <code>0</code>. Boolean operators use the following pattern:
     <pre><code>${boolean-operator}({path}, {group-index}? || 0){operator}={expression}</code></pre>

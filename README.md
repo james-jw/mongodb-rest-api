@@ -204,6 +204,12 @@
         <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
+        <td>$unwind</td>
+        <td>Deconstructs an array field from the input documents to output a document for each element. Each output document is the input document with the value of the array field replaced by the element.</td>
+        <td><code></code></td>
+        <td><pre><code>$unwind=events</code></pre></td>
+      </tr>
+      <tr>
         <td>$group-by</td>
         <td>Performs an aggregation using the path provided as the grouping variable. Multiple group bys are allowed.</td>
         <td></td>

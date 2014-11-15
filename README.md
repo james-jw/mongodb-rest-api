@@ -470,7 +470,8 @@ $max:1=age-sum</code></pre></td>
     
     All aggregative functions can operate on multiple fields. You can either supply the parameter multiple times or seperate a single aggregate functions param values with a <code>,</code>. For example, the following would sum both the orders and returns fields:
     <pre><code>$sum=orders,returns</code></pre>
-    
+    The longer form of this query is:
+    <pre><code>$sum=orders&$sum=returns</code></pre>
     <h3>Grouping on dates</h3>
     
     Date fields can be used when grouping. By default the exact value will be used to match groups however an interval can be defined instead. The interval follows a similar pattern as is used for querying dates. The format is: 

@@ -33,37 +33,42 @@
         "http://www.w3.org/ns/hydra/core#",
         { "vocab": "../rest/v1/vocab#" }
     ],
-    "@type": "hydra:IriTemplate",
+    "@type": "hydra:TemplatedLink",
     "@id": "../rest/v1/context/event-query-template.jsonld",
-    "template": {
-        "template": "../rest/v1/event{?query*}{?sort*}{?skip}{?limit}",
-        "method": "GET",
-        "contentType": "application/ld+json",
-        "mappings": [{
-            "@type": "IriTemplateMapping",
-            "variable": "query",
-            "property": "vocab:EventQueryTemplate",
-            "required": true
-        }, 
-        {
-            "@type": "IriTemplateMapping",
-            "variable": "sort",
-            "property": "vocab:$sort",
-            "required": "false"
-        },
-        {
-            "@type": "IriTemplateMapping",
-            "variable": "skip",
-            "property": "vocab:$skip",
-            "required": "false"
-        },
-        {
-            "@type": "IriTemplateMapping",
-            "variable": "limit",
-            "property": "vocab:$limit",
-            "required": "false"
-        }]
-    }
+    "template": "../rest/v1/event{?query*}{?sort*}{?skip}{?limit}",
+    "mapping": [{
+        "@type": "IriTemplateMapping",
+        "variable": "query",
+        "property": "vocab:EventQueryTemplate",
+        "required": true
+    }, 
+    {
+        "@type": "IriTemplateMapping",
+        "variable": "sort",
+        "property": "vocab:$sort",
+        "required": "false"
+    },
+    {
+        "@type": "IriTemplateMapping",
+        "variable": "skip",
+        "property": "vocab:$skip",
+        "required": "false"
+    },
+    {
+        "@type": "IriTemplateMapping",
+        "variable": "limit",
+        "property": "vocab:$limit",
+        "required": "false"
+    }],
+    supportOperation: [{
+      "@id": "_:event-query",
+      "@type": "hydra:Operation",
+      "method": "GET",
+      "label": "Query Events",
+      "description": "Performs a query against the application metrics event collection.",
+      "expects": null,
+      "returns": "hydra:PagedCollection"
+    }]
 }</code></pre>
     
     <h2>Versioning</h2>

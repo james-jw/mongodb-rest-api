@@ -261,7 +261,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
     
-    All operators with the exception of the <code>&lt;= and >=</code> can be passed multiple values. You can either provide the param multiple times or as a single string with values seperated with the <code>|</code> character.
+    All operators can be passed multiple values. You can provide the param multiple times or as a single string with values seperated by the <code>|</code> character. When multiple values are provided to the <code>&lt;= and >=</code> operators. The respective max or min value will be equated as a single value. 
     
     <h3>Boolean Operators</h3>
     

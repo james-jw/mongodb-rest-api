@@ -297,6 +297,8 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
     
+    <h4>Boolean Grouping and Operators</h4>
+    
     Boolean operators can be used to group conditions and create more complex expressions. Boolean operators accept two parameters. A <code>{path || group-reference}</code> and an optional <code>{group-index}</code> parameter. If no <code>group-index</code> is provided, the operation is assumed to be against group <code>0</code>. Boolean operators use the following pattern:
     <pre><code>${boolean-operator}({path}, {group-index}? || 0){operator}={expression}</code></pre>
     
@@ -328,7 +330,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
         <tr>
     </table>
     
-    <h4>Boolean grouping</h4>
+    <h5>Sub Grouping</h5>
     Sub-grouping is accomplished via group references in the place of the <code>{path}</code> parameter. Note, that in the following expression <code>$or(name, 1)&$or(0, 1)</code>, both <code>$or</code> operations are in group <code>1</code>. The second <code>$or</code> operation; however, references group <code>0</code>. This group is used as its input thus resulting in group <code>0</code> as a sub group of group <code>1</code>. Both $and operations are in group <code>0</code> since they do not reference a group-index.
     <pre><code>$and(name)~=tony&$and(name)!~=ant&or(name, 1)=antony&$or(0, 1)</code></pre>
             The above query translates to :

@@ -317,7 +317,7 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
             The above query translates to :
             <pre><code>{$or: [ 
     { $and: [{ name: { $regex: "tony" }}, { name: { $not: {$regex: "ant" }}} ]},
-    { name: "anthony"}
+    { name: "antony"}
 ]</code></pre> In plain english:
             All documents with a name matching <code>tony</code> but not <code>ant</code>, or having the exact name of      <code>antony</code>. 
     

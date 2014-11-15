@@ -174,7 +174,7 @@
       </tr>
       <tr>
         <td>Path Expression</td>
-        <td>Queries against the path provided. Available paths depends on the document structure.</td>
+        <td>Queries against the path provided. Available paths depend on the document structure.</td>
         <td></td>
         <td><pre><code>name.firstName=John&amp;age>=20</code></pre></td>
       </tr>

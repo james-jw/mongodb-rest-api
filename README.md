@@ -205,9 +205,10 @@
       </tr>
       <tr>
         <td>$expand</td>
-        <td>Produces a unique document object for each member of the array. Each output document is the input document with the value of the array field replaced by the element.</td>
-        <td><code></code></td>
-        <td><pre><code>$unwind=events</code></pre></td>
+        <td>Produces a unique document object for each member of the array. Each output document is the input document with the value of the array field replaced by the element. Expansion occurs prior to each predication at any stage.
+        </td>
+        <td></td>
+        <td><pre><code>$expand=events</code></pre></td>
       </tr>
       <tr>
         <td>$group-by</td>

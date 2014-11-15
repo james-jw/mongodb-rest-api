@@ -499,7 +499,7 @@ $max:1=age-sum</code></pre></td>
     For example, to group by the day of the week (monday, tuesday ...) you could use:
     <pre><code>$group-by=endTimeUtc dayOfWeek</code></pre>
     
-    <h3>Predication, Projection, and Grouping pipelines (Proposed)</h3>
+    <h3>Predication, Projection, and Grouping pipelines</h3>
     Mongodb allows for pipelines to be defined to perform more sophisticated predication, projection, and grouping. The approached defined thus far only allows for one level of grouping. If additional post grouping is required you can use the following format:<p />
     
     <pre><code>{parameter-name({function-params}?):{pipeline-index? || 0}{operator}?={expression}</code></pre> 

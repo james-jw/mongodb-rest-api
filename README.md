@@ -204,8 +204,8 @@
         <td><pre><code>$sort=age asc</code></pre></td>
       </tr>
       <tr>
-        <td>$unwind</td>
-        <td>Deconstructs an array field from the input documents to output a document for each element. Each output document is the input document with the value of the array field replaced by the element.</td>
+        <td>$expand</td>
+        <td>Produces a unique document object for each member of the array. Each output document is the input document with the value of the array field replaced by the element.</td>
         <td><code></code></td>
         <td><pre><code>$unwind=events</code></pre></td>
       </tr>

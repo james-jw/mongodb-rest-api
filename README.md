@@ -21,7 +21,7 @@
     "@context": "../rest/v1/vocab#",
     "@id": "../rest/v1/",
     "@type": "EntryPoint",
-    "issues": "../rest/v1/events/",
+    "events": "../rest/v1/events/",
     "users": "../rest/v1/users/"
 }</code></pre>
     

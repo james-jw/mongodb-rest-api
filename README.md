@@ -304,6 +304,10 @@ eventName~=Designer.*Count|Session.*Count</code></pre>
       </tr>
     </tbody></table>
     
+    If only the path is supplied. The operation equated against null. For example to find all events with a startTimeUtc not equal to null you could use the following expression:
+    
+    <pre><code>events?startTimeUtc!</code></pre>
+    
     Here is a list of the avaiable operators and some examples:
     <table>
         <tr>
